@@ -1,0 +1,31 @@
+{
+  "name": "test13",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel src/index.html --no-cache",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "build": "parcel build src/index.html --public-url /test13/ --no-cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fgtucv/test13.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/fgtucv/test13/issues"
+  },
+  "homepage": "https://fgtucv.github.io/test13/",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.4",
+    "gh-pages": "^6.3.0",
+    "parcel": "^2.16.4",
+    "posthtml-include": "^2.0.1",
+    "sass": "^1.101.0"
+  }
+}
