@@ -1,0 +1,193 @@
+/* Шапка сайту та її контейнер */
+.header {
+    backdrop-filter: blur(16px);
+    border-bottom: 1px #e5e7ebb3 solid;
+    z-index: 30;
+    position: sticky;
+    top: 0;
+}
+
+.header .container {
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 32px;
+
+}
+
+/* Блок логотипу */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo__bacgraund {
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 4px 6px -1px #a855f74d, 0 2px 4px -2px #a855f74d;
+    background-image: linear-gradient(to bottom right, #a855f7, #7e22ce);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo__icon {
+    width: 20px;
+    height: 20px;
+    stroke: #ffffff;
+}
+
+.logo__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo__title {
+    color: #111827;
+    letter-spacing: -0.4px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.logo__subtitle {
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.25;
+}
+
+/* Загальний блок для кнопок дій */
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.actions__button {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    padding: 0 10px;
+    gap: 6px;
+    height: 36px;
+    align-items: center;
+    display: flex;
+    border: 1px #e5e7eb solid;
+    border-radius: 12px;
+}
+
+.actions__button--theme {}
+
+.actions__icon {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    width: 18px;
+    height: 18px;
+    stroke: #4b5563;
+}
+
+.actions__text {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    color: #4b5563;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.actions__arrow {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    width: 14px;
+    height: 14px;
+    stroke: #4b5563;
+}
+
+/* Компонент випадного списку (Dropdown) */
+.dropdown {
+    transform: translate(0, 0);
+}
+
+.dropdown__currency {}
+
+.dropdown__language {}
+
+.dropdown__currency .dropdown__menu {
+    bottom: -220px;
+    right: 0;
+}
+
+.dropdown__language .dropdown__menu {
+    bottom: -180px;
+    right: 0;
+}
+ 
+// .dropdown__toggle {}
+
+.dropdown__menu {
+    position: absolute;
+    overflow: hidden;
+    z-index: 50;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 0.8px #e5e7eb solid;
+    padding: 4px 0px;
+    animation: fade-in-up 0.4s ease-out;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+}
+
+.dropdown__item {
+    display: flex;
+    cursor: pointer;
+    padding: 8px 12px;
+    align-items: center;
+    background-color: transparent;
+}
+
+.dropdown__item--selected {
+    background-color: #faf5ff;
+}
+
+.dropdown__item--selected .dropdown__item-type {
+    color: #7e22ce;
+}
+
+.dropdown__item--selected .dropdown__item-label {
+    color: #7e22ce;
+}
+
+.dropdown__item--selected .dropdown__item-icon {
+    stroke: #7e22ce;
+    opacity: 1;
+}
+
+.dropdown__item-type {
+    color: #374151;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.dropdown__item-label {
+    white-space: nowrap;
+    color: #374151;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.dropdown__item-icon {
+    width: 16px;
+    height: 16px;
+    stroke: #374151;
+    margin-left: auto;
+    opacity: 0;
+}

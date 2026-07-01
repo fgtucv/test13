@@ -1,3 +1,30 @@
 body {
-    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+svg {
+    display: block;
+    vertical-align: middle;
+}
+
+button {
+    font-family: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+}
+
+.container {
+    max-width: 1280px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.is-hidden {
+    display: none;
+    opacity: 0;
+}
+
+.round-180-deg {
+    transform: rotate(180deg);
 }

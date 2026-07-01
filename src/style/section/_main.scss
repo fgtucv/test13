@@ -1,0 +1,179 @@
+/* ==========================================================================
+   1. ГОЛОВНІ ОБГОРТКИ, КОНТЕЙНЕРИ ТА ШАПКА СТОРІНКИ
+   ========================================================================== */
+
+.calculator {}
+
+.calculator .container {
+   flex-direction: column;
+}
+
+.calculator__header {}
+
+.calculator__title {}
+
+.calculator__subtitle {}
+
+.calculator__layout {
+   display: flex;
+}
+
+
+/* ==========================================================================
+   2. ЛІВА ПАНЕЛЬ (ФОРМА ТА НАЛАШТУВАННЯ)
+   ========================================================================== */
+
+.calculator__sidebar {}
+
+.calculator__form {}
+
+.form-settings {}
+
+.form-settings__header {}
+
+.form-settings__title {}
+
+.form-settings__actions {}
+
+.form-settings__hint {}
+
+.form-settings__reset-btn {}
+
+/* Групи полів та елементи вводу */
+.form-settings__group {}
+
+.form-settings__label-row {}
+
+.form-settings__label {}
+
+.form-settings__value-badge {}
+
+.form-settings__input {}
+
+.form-settings__range {}
+
+/* Таби-перемикачі (Щомісяця / Щороку) */
+.form-settings__toggle-group {}
+
+.form-settings__toggle-radio {}
+
+.form-settings__toggle-label {}
+
+/* Список карток для вибору податку */
+.form-settings__radio-list {}
+
+.form-settings__radio-card {}
+
+.form-settings__radio-card--selected {}
+
+.form-settings__radio-input {}
+
+.form-settings__radio-text {}
+
+/* Кастомний випадний список (Dropdown) */
+.form-settings__dropdown {}
+
+.dropdown {}
+
+.dropdown__toggle {}
+
+.dropdown__current-value {}
+
+.dropdown__arrow {}
+
+.dropdown__menu {}
+
+.dropdown__item {}
+
+.dropdown__item--selected {}
+
+/* Головна кнопка форми */
+.form-settings__submit-btn {}
+
+
+/* ==========================================================================
+   3. ПРАВА ПАНЕЛЬ (РЕЗУЛЬТАТИ ТА ВІЗУАЛІЗАЦІЯ)
+   ========================================================================== */
+
+.calculator__main {}
+
+/* Блок шести карток результатів */
+.calculator__results {}
+
+.dashboard-grid {}
+
+.result-card {}
+
+.result-card__header {}
+
+.result-card__title {}
+
+.result-card__icon {}
+
+.result-card__value {}
+
+/* Модифікатори кольорів для кожної картки */
+.result-card--purple {}
+
+.result-card--violet {}
+
+.result-card--red {}
+
+.result-card--gray {}
+
+.result-card--green {}
+
+.result-card--orange {}
+
+/* Блок інтерактивного графіка */
+.calculator__chart-section {}
+
+.chart-box {}
+
+.chart-box__header {}
+
+.chart-box__title-group {}
+
+.chart-box__title {}
+
+.chart-box__subtitle {}
+
+.chart-box__legend {}
+
+.legend {}
+
+.legend__item {}
+
+.legend__item--contribution {}
+
+.legend__item--interest {}
+
+.legend__item--capital {}
+
+.chart-box__body {}
+
+#growthChart {}
+
+/* Блок таблиці (Акордеон) */
+.calculator__table-section {}
+
+.accordion {}
+
+.accordion__item {}
+
+.accordion__trigger {}
+
+.accordion__title {}
+
+.accordion__icon {}
+
+.accordion__subtitle {}
+
+.accordion__content {}
+
+
+/* ==========================================================================
+   4. СЕЛЕКТОР СИМВОЛУ ВАЛЮТИ (ДЛЯ КЕРУВАННЯ З JS)
+   ========================================================================== */
+
+[data-currency-sign] {}

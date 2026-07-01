@@ -1,0 +1,18 @@
+.actions__button:hover .actions__icon,
+.actions__button:hover .actions__text,
+.actions__button:hover .actions__arrow {
+    stroke: #9333ea;
+    color: #9333ea;
+}
+
+.actions__button:hover {
+    border: 1px #9333ea solid;
+}
+
+.actions__button--theme:hover .actions__icon {
+    transform: rotate(-20deg);
+}
+
+.dropdown__item:hover {
+    background-color: #f9fafb;
+}
