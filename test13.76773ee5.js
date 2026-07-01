@@ -1,0 +1,2 @@
+let e=document.querySelectorAll(".dropdown");function o(o){let r=o.target.closest(".dropdown");if(!r)return;let t=r.querySelector(".dropdown__menu"),s=r.querySelector(".actions__arrow");e.forEach(e=>{if(e!==r){let o=e.querySelector(".dropdown__menu"),r=e.querySelector(".actions__arrow");o&&!o.classList.contains("is-hidden")&&o.classList.add("is-hidden"),r&&r.classList.remove("round-180-deg")}}),s&&s.classList.toggle("round-180-deg"),t&&t.classList.toggle("is-hidden")}e.forEach(e=>{e.addEventListener("click",o)});
+//# sourceMappingURL=test13.76773ee5.js.map
