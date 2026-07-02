@@ -6,13 +6,28 @@
 
 .calculator .container {
    flex-direction: column;
+   padding: 32px;
 }
 
-.calculator__header {}
+.calculator__header {
+   margin-bottom: 32px;
+}
 
-.calculator__title {}
+.calculator__title {
+   font-size: 30px;
+   line-height: 36px;
+   color: #111827;
+   font-weight: 800;
+   letter-spacing: -0.75px;
+}
 
-.calculator__subtitle {}
+.calculator__subtitle {
+   font-size: 16px;
+   line-height: 24px;
+   color: #6b7280;
+   margin-top: 6px;
+   max-width: 672px;
+}
 
 .calculator__layout {
    display: flex;
@@ -23,72 +38,203 @@
    2. ЛІВА ПАНЕЛЬ (ФОРМА ТА НАЛАШТУВАННЯ)
    ========================================================================== */
 
-.calculator__sidebar {}
+.calculator__sidebar {
+   background-color: #ffffff;
+   border-radius: 16px;
+   border: 0.8px solid #e5e7eb;
+   box-sizing: border-box;
+   display: block;
+   padding: 24px;
+   max-width: 380px;
+   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px -1px;
+}
 
-.calculator__form {}
+.calculator__form {
+   gap: 24px;
+   display: flex;
+   flex-direction: column;
+}
 
 .form-settings {}
 
-.form-settings__header {}
+.form-settings__header {
+   display: flex;
+   margin-bottom: 20px;
+}
 
-.form-settings__title {}
+.form-settings__title {
+   font-size: 16px;
+   line-height: 24px;
+   color: #111827;
+   font-weight: 700;
+}
 
-.form-settings__actions {}
+.form-settings__actions {
+   margin-top: 2px;
+   display: flex;
+}
 
-.form-settings__hint {}
+.form-settings__hint {
+   font-size: 12px;
+   line-height: 16px;
+   color: #6b7280;
+}
 
-.form-settings__reset-btn {}
+.form-settings__reset-btn {
+   color: #6b7280;
+   font-size: 12px;
+   line-height: 16px;
+   font-weight: 500;
+   letter-spacing: normal;
+   display: flex;
+   gap: 6px;
+   background-color: transparent;
+   align-items: center;
+   border-radius: 8px;
+   padding: 6px 10px;
+}
+
+.form-settings__reset-icon {
+   height: 14px;
+   width: 14px;
+}
 
 /* Групи полів та елементи вводу */
 .form-settings__group {}
 
-.form-settings__label-row {}
+.form-settings__label {
+   color: #374151;
+   font-size: 16px;
+   line-height: 24px;
+   font-weight: 600;
+}
 
-.form-settings__label {}
+.form-settings__data-row {
+   gap: 12px;
+   display: flex;
+   align-items: center;
+   margin-top: 10px;
+}
 
-.form-settings__value-badge {}
+.form-settings__value-badge {
+   background-color: rgb(250, 245, 255);
+   border-radius: 8px;
+   width: 88px;
+   height: 32px;
+   color: #7c3aed;
+   font-size: 14px;
+   line-height: 20px;
+   font-weight: 700;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+}
 
-.form-settings__input {}
+.form-settings__input {
+   background-color: #ffffff;
+   padding: 10px 14px;
+   border-radius: 12px;
+   border: 0.8px solid #e5e7eb;
+   font-size: 14px;
+   line-height: 20px;
+   letter-spacing: normal;
+   font-weight: 600;
+}
 
 .form-settings__range {}
 
 /* Таби-перемикачі (Щомісяця / Щороку) */
-.form-settings__toggle-group {}
+.form-settings__toggle-group {
+   display: flex;
+   background-color: #f3f4f6;
+   border-radius: 12px;
+   padding: 4px;
+   width: 100%;
+   max-width: 320px;
+   margin-top: 10px;
+}
 
-.form-settings__toggle-radio {}
+.form-settings__toggle-radio {
+   display: none;
+}
 
-.form-settings__toggle-label {}
+.form-settings__toggle-label {
+   flex: 1;
+   text-align: center;
+   padding: 10px 16px;
+   font-size: 14px;
+   font-weight: 600;
+   color: #4b5563;
+   cursor: pointer;
+   border-radius: 9px;
+   user-select: none;
+   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-/* Список карток для вибору податку */
-.form-settings__radio-list {}
-
-.form-settings__radio-card {}
-
-.form-settings__radio-card--selected {}
-
-.form-settings__radio-input {}
-
-.form-settings__radio-text {}
+.form-settings__toggle-label--selected {
+   background-color: #ffffff;
+   color: #7e22ce;
+   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
 
 /* Кастомний випадний список (Dropdown) */
-.form-settings__dropdown {}
 
-.dropdown {}
+.form-settings__dropdown {
+   padding: 10px 14px;
+   display: flex;
+   background-color: #ffffff;
+   border-radius: 12px;
+   border: 0.8px solid #e5e7eb;
+   margin-top: 10px;
+}
 
-.dropdown__toggle {}
+.form-settings__dropdown .dropdown__toggle {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 100%;
+}
 
-.dropdown__current-value {}
+.form-settings__dropdown .dropdown__current-value {
+   color: #111827;
+   font-size: 14px;
+   font-weight: 600;
+   line-height: 20px;
+   letter-spacing: normal;
+}
 
-.dropdown__arrow {}
+.form-settings__dropdown .dropdown__arrow {
+   height: 16px;
+   width: 16px;
+   stroke: #4b5563;
+}
 
-.dropdown__menu {}
+.form-settings__dropdown .dropdown__menu {}
 
 .dropdown__item {}
 
 .dropdown__item--selected {}
 
 /* Головна кнопка форми */
-.form-settings__submit-btn {}
+.form-settings__submit-btn {
+   padding: 12px;
+   background-color: #f3f4f6;
+   border-radius: 12px;
+   color: #9ca3af;
+   display: flex;
+   gap: 8px;
+   justify-content: center;
+   font-weight: 700;
+   font-size: 14px;
+   line-height: 20px;
+   letter-spacing: normal;
+}
+
+.form-settings__submit-icon {
+   height: 16px;
+   width: 16px;
+   stroke: currentColor;
+}
 
 
 /* ==========================================================================
