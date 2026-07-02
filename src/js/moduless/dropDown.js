@@ -1,7 +1,12 @@
 const dropDowns = document.querySelectorAll(".dropdown");
+const dropDownMenus = document.querySelectorAll(".dropdown__menu");
 
 dropDowns.forEach(button => {
     button.addEventListener("click", toggleDropDown);
+});
+
+dropDownMenus.forEach(menu => {
+    menu.addEventListener("click", changeDropDownValue);
 });
 
 function toggleDropDown(event) {
@@ -28,4 +33,24 @@ function toggleDropDown(event) {
 
     if (currentIcon) currentIcon.classList.toggle("round-180-deg");
     if (currentDropDownList) currentDropDownList.classList.toggle("is-hidden");
+}
+
+function changeDropDownValue(event) {
+    let currentDropDownItem;
+
+    if (event.target.classList.contains("dropdown__item")) {
+        currentDropDownItem = event.target;
+    } else {
+        currentDropDownItem = event.target.closest(".dropdown__item");
+    }
+
+    const currentDropDownMenu = currentDropDownItem.closest(".dropdown");
+    const currentDropDownSelectedItem = currentDropDownMenu.querySelector(".dropdown__item--selected");
+    const currentDropDownValue = currentDropDownItem.querySelector(".dropdown__item-type");
+    const dropDownValue = currentDropDownMenu.querySelector(".dropdown__current-value");
+
+    currentDropDownSelectedItem.classList.remove("dropdown__item--selected");
+    currentDropDownItem.classList.add("dropdown__item--selected");
+
+    dropDownValue.textContent = currentDropDownValue.textContent;
 }

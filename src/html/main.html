@@ -51,7 +51,8 @@
                     <div class="form-settings__group">
                         <span class="form-settings__label">Періодичність внесків</span>
                         <div class="form-settings__toggle-group">
-                            <label for="periodMonthly" class="form-settings__toggle-label form-settings__toggle-label--selected">Щомісяця</label>
+                            <label for="periodMonthly"
+                                class="form-settings__toggle-label form-settings__toggle-label--selected">Щомісяця</label>
 
                             <label for="periodYearly" class="form-settings__toggle-label">Щороку</label>
                         </div>
@@ -99,7 +100,8 @@
                         <span class="form-settings__label">Коли сплачувати податок</span>
 
                         <div class="form-settings__toggle-group">
-                            <label for="periodYearly" class="form-settings__toggle-label form-settings__toggle-label--selected">Щороку</label>
+                            <label for="periodYearly"
+                                class="form-settings__toggle-label form-settings__toggle-label--selected">Щороку</label>
 
                             <label for="periodEnd" class="form-settings__toggle-label">Наприкінці
                             </label>
@@ -118,8 +120,16 @@
                                 </svg>
                             </button>
                             <ul class="dropdown__menu is-hidden">
-                                <li class="dropdown__item dropdown__item--selected">Щомісяця</li>
-                                <li class="dropdown__item">Щороку</li>
+                                <li class="dropdown__item dropdown__item--selected">
+                                    <span class="dropdown__item-type">
+                                        Щомісяця
+                                    </span>
+                                </li>
+                                <li class="dropdown__item dropdown__item-type">
+                                    <span class="dropdown__item-type">
+                                        Щороку
+                                    </span>
+                                </li>
                             </ul>
                         </div>
                     </div>

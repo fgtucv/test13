@@ -16,3 +16,16 @@
 .dropdown__item:hover {
     background-color: #f9fafb;
 }
+
+.calculator__sidebar:hover {
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(124, 58, 237, 0.25) 0px 10px 30px -10px;
+}
+
+.form-settings__reset-btn:hover {
+    background-color: #f9fafb;
+    color: #9333ea;
+}
+
+.form-settings__reset-btn:hover .form-settings__reset-icon {
+    stroke: #9333ea;
+}
