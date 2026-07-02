@@ -97,6 +97,19 @@ button {
   transform: rotate(-20deg);
 }
 
+.calculator__sidebar:hover {
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 30px -10px #7c3aed40;
+}
+
+.form-settings__reset-btn:hover {
+  color: #9333ea;
+  background-color: #f9fafb;
+}
+
+.form-settings__reset-btn:hover .form-settings__reset-icon {
+  stroke: #9333ea;
+}
+
 .header {
   z-index: 30;
   backdrop-filter: blur(16px);
@@ -355,6 +368,7 @@ button {
   border-radius: 8px;
   align-items: center;
   gap: 6px;
+  height: fit-content;
   padding: 6px 10px;
   font-size: 12px;
   font-weight: 500;
