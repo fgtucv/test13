@@ -1,3 +1,7 @@
+@mixin smooth-transition {
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* ==========================================================================
    1. ГОЛОВНІ ОБГОРТКИ, КОНТЕЙНЕРИ ТА ШАПКА СТОРІНКИ
    ========================================================================== */
@@ -46,6 +50,8 @@
    display: block;
    padding: 24px;
    max-width: 380px;
+   margin-right: 24px;
+   @include smooth-transition;
    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px -1px;
 }
 
@@ -245,32 +251,111 @@
 .calculator__main {}
 
 /* Блок шести карток результатів */
-.calculator__results {}
+.calculator__results {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 16px;
+}
 
 .dashboard-grid {}
 
-.result-card {}
+.result-card {
+   background-color: #ffffff;
+   border-radius: 16px;
+   border: 0.8px solid #e5e7eb;
+   box-sizing: border-box;
+   display: block;
+   padding: 20px;
+   width: 260px;
+   @include smooth-transition;
+   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px -1px;
+}
 
-.result-card__header {}
+.result-card__header {
+   display: flex;
+   margin-bottom: 12px;
+   justify-content: space-between;
+}
 
-.result-card__title {}
+.result-card__title {
+   color: #6b7280;
+   font-size: 12px;
+   line-height: 16px;
+   font-weight: 600;
+   letter-spacing: 0.3px;
+}
 
-.result-card__icon {}
+.result-card__icon-bacground {
+   height: 36px;
+   width: 36px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 12px;
+   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
+}
 
-.result-card__value {}
+.result-card__icon {
+   height: 18px;
+   width: 18px;
+   stroke: #ffffff;
+}
+
+.result-card__value {
+   font-size: 28px;
+   line-height: 32px;
+   font-weight: 800;
+   letter-spacing: -0.7px;
+}
 
 /* Модифікатори кольорів для кожної картки */
-.result-card--purple {}
+.result-card--purple .result-card__icon-bacground {
+   background: linear-gradient(to right bottom, rgb(168, 85, 247), rgb(126, 34, 206));
+}
 
-.result-card--violet {}
+.result-card--violet .result-card__icon-bacground {
+   background: linear-gradient(to right bottom, rgb(192, 132, 252), rgb(147, 51, 234));
+}
 
-.result-card--red {}
+.result-card--red .result-card__icon-bacground {
+   background: linear-gradient(to right bottom, rgb(239, 68, 68), rgb(185, 28, 28));
+}
 
-.result-card--gray {}
+.result-card--gray .result-card__icon-bacground {
+   background: linear-gradient(to right bottom, rgb(156, 163, 175), rgb(75, 85, 99));
+}
 
-.result-card--green {}
+.result-card--green .result-card__icon-bacground {
+   background: linear-gradient(to right bottom, rgb(16, 185, 129), rgb(4, 120, 87));
+}
 
-.result-card--orange {}
+.result-card--orange .result-card__icon-bacground {
+   background: linear-gradient(to right bottom, rgb(245, 158, 11), rgb(180, 83, 9));
+}
+
+.result-card--purple .result-card__value {
+   color: #7e22ce;
+}
+
+.result-card--violet .result-card__value {
+   color: #9333ea;
+}
+
+.result-card--red .result-card__value {
+   color: #dc2626;
+}
+
+.result-card--gray .result-card__value {
+   color: #374151;
+}
+
+.result-card--green .result-card__value {
+   color: #047857;
+}
+
+.result-card--orange .result-card__value {
+   color: #b45309;
+}
 
 /* Блок інтерактивного графіка */
 .calculator__chart-section {}
