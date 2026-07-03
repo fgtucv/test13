@@ -1,5 +1,5 @@
 @mixin smooth-transition {
-    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ==========================================================================
@@ -360,29 +360,83 @@
 /* Блок інтерактивного графіка */
 .calculator__chart-section {}
 
-.chart-box {}
+.chart-box {
+   background-color: #ffffff;
+   margin-top: 24px;
+   border-radius: 16px;
+   border: 0.8px solid #e5e7eb;
+   box-sizing: border-box;
+   padding: 24px;
+   @include smooth-transition;
+   max-width: 812px;
+   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px -1px;
+}
 
-.chart-box__header {}
+.chart-box__header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 16px;
+}
 
 .chart-box__title-group {}
 
-.chart-box__title {}
+.chart-box__title {
+   font-size: 16px;
+   line-height: 24px;
+   color: #111827;
+   font-weight: 700;
+}
 
-.chart-box__subtitle {}
+.chart-box__subtitle {
+   margin-top: 2px;
+   font-size: 12px;
+   line-height: 16px;
+   color: #6b7280;
+   font-weight: 400;
+}
 
 .chart-box__legend {}
 
-.legend {}
+.legend {
+   gap: 16px;
+   display: flex;
+}
 
-.legend__item {}
+.legend__item {
+   font-size: 12px;
+   line-height: 16px;
+   color: #4b5563;
+   font-weight: 500;
+}
 
-.legend__item--contribution {}
+.legend__item::before {
+   content: "";
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   display: inline-block;
+   vertical-align: middle;
+   margin-right: 6px;
+}
 
-.legend__item--interest {}
+.legend__item--contribution::before {
+   background-color: rgb(233, 213, 255);
+}
 
-.legend__item--capital {}
+.legend__item--interest::before {
+   background-color: rgb(147, 51, 234);
+}
 
-.chart-box__body {}
+.legend__item--capital::before {
+   background-color: rgb(16, 185, 129);
+}
+
+.chart-box__body {
+   position: relative;
+   margin: auto;
+   max-width: 762px;
+}
 
 #growthChart {}
 

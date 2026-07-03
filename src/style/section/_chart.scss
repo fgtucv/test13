@@ -1,0 +1,46 @@
+/* Контейнер для кастомного тултіпу, який керується через JS */
+#chartjs-tooltip {
+  opacity: 0;
+  position: absolute;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  width: 260px;
+  font-family: sans-serif;
+  pointer-events: none; /* Щоб тултіп не смикався при наведенні на нього */
+  transition: all 0.1s ease;
+  z-index: 100;
+}
+
+.tooltip-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+/* Класи кольорів відповідно до індексів ваших ліній */
+.color-index-0 { color: #10b981; } /* Сірий для Внеску */
+.color-index-1 { color: #9333ea; } /* Пурпурний для Відсотків */
+.color-index-2 { color: #6c757d; } /* Зелений для Чистого капіталу */
+
+.tooltip-divider {
+  border-top: 1px solid #eeeeee;
+  margin-top: 12px;
+  padding-top: 12px;
+}
+
+.tooltip-total {
+  font-weight: 700;
+  font-size: 15px;
+  color: #1a1a1a;
+}
