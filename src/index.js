@@ -1,5 +1,11 @@
 import "./js/app.js";
+import "./js/build/buildGraphic.js";
+import "./js/build/buildGraphic.js";
 import "./js/openClose/dropDown.js";
-import "./js/build/graphic.js";
 import "./js/operation/calculateResult.js";
-import "./js/build/graphic.js";
+import "./js/operation/renewaInputBadge.js";
+import "./js/operation/changeToggleGroup.js";
+import "./js/operation/disableButton.js";
+import "./js/data/makeDataFromInput.js";
+import "./js/data/makeDataFromToggle.js";
+import "./js/data/compliteDataToCanculate.js";

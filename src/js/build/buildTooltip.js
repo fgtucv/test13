@@ -31,7 +31,7 @@ export const externalTooltipHandler = (context) => {
       const value = dataPoint.raw;
       totalSum = value;
 
-      const formattedValue = '$' + value.toLocaleString('en-US');
+      const formattedValue = value.toLocaleString('en-US');
 
       innerHtml += `
         <div class="tooltip-row color-index-${i}">

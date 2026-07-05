@@ -1,16 +1,4 @@
-// canculator_2.js
-
-export const data = {
-    firstContribution: 10000,
-    contribution: 100,
-    contributionFrequency: "monthly", 
-    interestRate: 2,
-    Inflation: 0,
-    taxRate: 0,
-    payTaxFrequency: "end", 
-    interestRateFrequency: "annual", 
-    years: 20
-};
+import { data } from "../data/compliteDataToCanculate.js";
 
 export function calculated(object) {
     const {

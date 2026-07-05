@@ -86,26 +86,6 @@
    color: #6b7280;
 }
 
-.form-settings__reset-btn {
-   color: #6b7280;
-   font-size: 12px;
-   line-height: 16px;
-   font-weight: 500;
-   letter-spacing: normal;
-   display: flex;
-   gap: 6px;
-   background-color: transparent;
-   align-items: center;
-   border-radius: 8px;
-   padding: 6px 10px;
-   height: fit-content;
-}
-
-.form-settings__reset-icon {
-   height: 14px;
-   width: 14px;
-}
-
 /* Групи полів та елементи вводу */
 .form-settings__group {}
 
@@ -129,7 +109,7 @@
    width: 88px;
    height: 32px;
    color: #7c3aed;
-   font-size: 14px;
+   font-size: 13px;
    line-height: 20px;
    font-weight: 700;
    align-items: center;
@@ -225,7 +205,7 @@
 /* Головна кнопка форми */
 .form-settings__submit-btn {
    padding: 12px;
-   background-color: #f3f4f6;
+   background: #f3f4f6;
    border-radius: 12px;
    color: #9ca3af;
    display: flex;
@@ -235,6 +215,12 @@
    font-size: 14px;
    line-height: 20px;
    letter-spacing: normal;
+}
+
+.form-settings__reset-btn--active {
+   background: linear-gradient(to right, rgb(147, 51, 234), rgb(126, 34, 206));
+   color: #ffffff;
+   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(168, 85, 247, 0.3) 0px 4px 6px -1px, rgba(168, 85, 247, 0.3) 0px 2px 4px -2px;
 }
 
 .form-settings__submit-icon {
@@ -421,7 +407,7 @@
 }
 
 .legend__item--contribution::before {
-   background-color: rgb(233, 213, 255);
+   background-color: rgb(108, 117, 125);
 }
 
 .legend__item--interest::before {

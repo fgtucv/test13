@@ -1,5 +1,3 @@
-import { changeCurrency } from "../operation/changeCurrency.js";
-
 const dropDowns = document.querySelectorAll(".dropdown");
 const dropDownMenus = document.querySelectorAll(".dropdown__menu");
 
@@ -55,10 +53,4 @@ function changeDropDownValue(event) {
     currentDropDownItem.classList.add("dropdown__item--selected");
 
     dropDownValue.textContent = currentDropDownValue.textContent;
-
-    console.log(currentDropDownMenu.id)
-
-    if (currentDropDownMenu.id === "currencyDropdown") {
-        changeCurrency(currentDropDownValue.textContent);
-    }
 }
