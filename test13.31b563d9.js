@@ -715,203 +715,143 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"a0t4e":[function(require,module,exports,__globalThis) {
 var _appJs = require("./js/app.js");
+var _buildGraphicJs = require("./js/build/buildGraphic.js");
 var _dropDownJs = require("./js/openClose/dropDown.js");
-var _graphicJs = require("./js/build/graphic.js");
 var _calculateResultJs = require("./js/operation/calculateResult.js");
+var _renewaInputBadgeJs = require("./js/operation/renewaInputBadge.js");
+var _changeToggleGroupJs = require("./js/operation/changeToggleGroup.js");
+var _disableButtonJs = require("./js/operation/disableButton.js");
+var _makeDataFromInputJs = require("./js/data/makeDataFromInput.js");
+var _makeDataFromToggleJs = require("./js/data/makeDataFromToggle.js");
+var _compliteDataToCanculateJs = require("./js/data/compliteDataToCanculate.js");
 
-},{"./js/app.js":"9f5IL","./js/openClose/dropDown.js":"TFunB","./js/build/graphic.js":"4g1IL","./js/operation/calculateResult.js":"hWafh"}],"9f5IL":[function(require,module,exports,__globalThis) {
+},{"./js/app.js":"9f5IL","./js/openClose/dropDown.js":"TFunB","./js/operation/calculateResult.js":"hWafh","./js/operation/renewaInputBadge.js":"Zn6Xe","./js/operation/changeToggleGroup.js":"ifLxv","./js/data/makeDataFromInput.js":"9Sc4T","./js/data/makeDataFromToggle.js":"75EOm","./js/data/compliteDataToCanculate.js":"aNWHP","./js/build/buildGraphic.js":"81iWV","./js/operation/disableButton.js":"dxFi8"}],"9f5IL":[function(require,module,exports,__globalThis) {
+var _buildGraphic = require("./build/buildGraphic");
+(0, _buildGraphic.buildGraphic)();
 
-},{}],"TFunB":[function(require,module,exports,__globalThis) {
-var _changeCurrencyJs = require("../operation/changeCurrency.js");
-const dropDowns = document.querySelectorAll(".dropdown");
-const dropDownMenus = document.querySelectorAll(".dropdown__menu");
-dropDowns.forEach((button)=>{
-    button.addEventListener("click", toggleDropDown);
-});
-dropDownMenus.forEach((menu)=>{
-    menu.addEventListener("click", changeDropDownValue);
-});
-function toggleDropDown(event) {
-    const currentDropDown = event.target.closest(".dropdown");
-    if (!currentDropDown) return;
-    const currentDropDownList = currentDropDown.querySelector(".dropdown__menu");
-    const currentIcon = currentDropDown.querySelector(".actions__arrow");
-    dropDowns.forEach((dropDown)=>{
-        if (dropDown !== currentDropDown) {
-            const dropDownList = dropDown.querySelector(".dropdown__menu");
-            const icon = dropDown.querySelector(".actions__arrow");
-            if (dropDownList && !dropDownList.classList.contains("is-hidden")) dropDownList.classList.add("is-hidden");
-            if (icon) icon.classList.remove("round-180-deg");
-        }
-    });
-    if (currentIcon) currentIcon.classList.toggle("round-180-deg");
-    if (currentDropDownList) currentDropDownList.classList.toggle("is-hidden");
-}
-function changeDropDownValue(event) {
-    let currentDropDownItem;
-    if (event.target.classList.contains("dropdown__item")) currentDropDownItem = event.target;
-    else currentDropDownItem = event.target.closest(".dropdown__item");
-    const currentDropDownMenu = currentDropDownItem.closest(".dropdown");
-    const currentDropDownSelectedItem = currentDropDownMenu.querySelector(".dropdown__item--selected");
-    const currentDropDownValue = currentDropDownItem.querySelector(".dropdown__item-type");
-    const dropDownValue = currentDropDownMenu.querySelector(".dropdown__current-value");
-    currentDropDownSelectedItem.classList.remove("dropdown__item--selected");
-    currentDropDownItem.classList.add("dropdown__item--selected");
-    dropDownValue.textContent = currentDropDownValue.textContent;
-    console.log(currentDropDownMenu.id);
-    if (currentDropDownMenu.id === "currencyDropdown") (0, _changeCurrencyJs.changeCurrency)(currentDropDownValue.textContent);
-}
-
-},{"../operation/changeCurrency.js":"5CVct"}],"5CVct":[function(require,module,exports,__globalThis) {
+},{"./build/buildGraphic":"81iWV"}],"81iWV":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "changeCurrency", ()=>changeCurrency);
-const currency = document.querySelectorAll("[data-currency-sign]");
-function changeCurrency(newCurency) {
-    currency.forEach((item)=>{
-        item.textContent = newCurency;
-    });
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"jnFvT":[function(require,module,exports,__globalThis) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"4g1IL":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.export(exports, "buildGraphic", ()=>buildGraphic);
 var _auto = require("chart.js/auto");
 var _autoDefault = parcelHelpers.interopDefault(_auto);
+var _compliteDataToCanculateJs = require("../data/compliteDataToCanculate.js");
 var _calculateResultJs = require("../operation/calculateResult.js");
 var _buildTooltipJs = require("./buildTooltip.js");
-const ctx = document.getElementById('growthChart').getContext('2d');
-const result = (0, _calculateResultJs.calculated)((0, _calculateResultJs.data));
-const labelsX = [
-    "\u0420\u0456\u043A 0"
-];
-const vneskyArray = [
-    (0, _calculateResultJs.data).firstContribution
-];
-const vidsotkyArray = [
-    0
-];
-const totalArray = [
-    (0, _calculateResultJs.data).firstContribution
-];
-result.yearlyHistory.forEach((item)=>{
-    labelsX.push(`\u{420}\u{456}\u{43A} ${item.year}`);
-    vneskyArray.push(item.cumulativeContributions);
-    vidsotkyArray.push(item.cumulativeInterest);
-    totalArray.push(item.finalBalanceOfYear);
-});
-const gradientVnesok = ctx.createLinearGradient(0, 0, 0, 400);
-gradientVnesok.addColorStop(0, 'rgba(214, 187, 252, 0.6)');
-gradientVnesok.addColorStop(1, 'rgba(214, 187, 252, 0)');
-const gradientVidsotky = ctx.createLinearGradient(0, 0, 0, 400);
-gradientVidsotky.addColorStop(0, 'rgba(164, 70, 246, 0.4)');
-gradientVidsotky.addColorStop(1, 'rgba(164, 70, 246, 0)');
-// Малюємо графік
-new (0, _autoDefault.default)(ctx, {
-    type: 'line',
-    data: {
-        labels: labelsX,
-        datasets: [
-            {
-                label: "\u0427\u0438\u0441\u0442\u0438\u0439 \u043A\u0430\u043F\u0456\u0442\u0430\u043B",
-                data: totalArray,
-                borderColor: '#10b981',
-                borderWidth: 2,
-                fill: false,
-                pointRadius: 0,
-                pointHoverRadius: 6,
-                order: 1
-            },
-            {
-                label: "\u0412\u0456\u0434\u0441\u043E\u0442\u043A\u0438",
-                data: vidsotkyArray,
-                borderColor: '#9333EA',
-                backgroundColor: gradientVidsotky,
-                fill: 'origin',
-                pointRadius: 0,
-                order: 2
-            },
-            {
-                label: "\u0412\u043D\u0435\u0441\u043E\u043A",
-                data: vneskyArray,
-                borderColor: '#E9D5FF',
-                borderWidth: 1.5,
-                backgroundColor: gradientVnesok,
-                fill: 'origin',
-                pointRadius: 0,
-                order: 3
-            }
-        ]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: true,
-        responsive: true,
-        interaction: {
-            mode: 'index',
-            intersect: false
-        },
-        scales: {
-            x: {
-                grid: {
-                    display: false
-                }
-            },
-            y: {
-                grid: {
-                    borderDash: [
-                        4,
-                        4
-                    ],
-                    color: '#e5e7eb'
+var _disableButton = require("../operation/disableButton");
+const form = document.querySelector(".form-settings");
+form.addEventListener("submit", buildGraphic);
+// 1. Створюємо змінну для збереження екземпляру графіка поза функцією
+let growthChartInstance = null;
+function buildGraphic(event) {
+    if (event !== undefined) // console.log(event)
+    event.preventDefault();
+    // 2. Знищуємо старий графік, якщо він існує
+    if (growthChartInstance !== null) growthChartInstance.destroy();
+    const ctx = document.getElementById('growthChart').getContext('2d');
+    const result = (0, _calculateResultJs.calculated)((0, _compliteDataToCanculateJs.data));
+    const labelsX = [
+        "\u0420\u0456\u043A 0"
+    ];
+    const vneskyArray = [
+        (0, _compliteDataToCanculateJs.data).firstContribution
+    ];
+    const vidsotkyArray = [
+        0
+    ];
+    const totalArray = [
+        (0, _compliteDataToCanculateJs.data).firstContribution
+    ];
+    result.yearlyHistory.forEach((item)=>{
+        labelsX.push(`\u{420}\u{456}\u{43A} ${item.year}`);
+        vneskyArray.push(item.cumulativeContributions);
+        vidsotkyArray.push(item.cumulativeInterest);
+        totalArray.push(item.finalBalanceOfYear);
+    });
+    const gradientVnesok = ctx.createLinearGradient(0, 0, 0, 400);
+    gradientVnesok.addColorStop(0, 'rgba(214, 187, 252, 0.6)');
+    gradientVnesok.addColorStop(1, 'rgba(214, 187, 252, 0)');
+    const gradientVidsotky = ctx.createLinearGradient(0, 0, 0, 400);
+    gradientVidsotky.addColorStop(0, 'rgba(164, 70, 246, 0.4)');
+    gradientVidsotky.addColorStop(1, 'rgba(164, 70, 246, 0)');
+    // 3. Зберігаємо новий створений графік у нашу змінну
+    growthChartInstance = new (0, _autoDefault.default)(ctx, {
+        type: 'line',
+        data: {
+            labels: labelsX,
+            datasets: [
+                {
+                    label: "\u0427\u0438\u0441\u0442\u0438\u0439 \u043A\u0430\u043F\u0456\u0442\u0430\u043B",
+                    data: totalArray,
+                    borderColor: '#10b981',
+                    borderWidth: 2,
+                    fill: false,
+                    pointRadius: 0,
+                    pointHoverRadius: 6,
+                    order: 1
                 },
-                ticks: {
-                    callback: (value)=>value === 0 ? '$0' : '$' + (value / 1000).toFixed(1) + 'K'
+                {
+                    label: "\u0412\u0456\u0434\u0441\u043E\u0442\u043A\u0438",
+                    data: vidsotkyArray,
+                    borderColor: '#9333EA',
+                    backgroundColor: gradientVidsotky,
+                    fill: 'origin',
+                    pointRadius: 0,
+                    order: 2
+                },
+                {
+                    label: "\u0412\u043D\u0435\u0441\u043E\u043A",
+                    data: vneskyArray,
+                    borderColor: '#6c757d',
+                    borderWidth: 1.5,
+                    backgroundColor: gradientVnesok,
+                    fill: 'origin',
+                    pointRadius: 0,
+                    order: 3
                 }
-            }
+            ]
         },
-        plugins: {
-            legend: {
-                display: false
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            interaction: {
+                mode: 'index',
+                intersect: false
             },
-            tooltip: {
-                enabled: false,
-                external: (0, _buildTooltipJs.externalTooltipHandler)
+            scales: {
+                x: {
+                    grid: {
+                        display: false
+                    }
+                },
+                y: {
+                    grid: {
+                        borderDash: [
+                            4,
+                            4
+                        ],
+                        color: '#e5e7eb'
+                    },
+                    ticks: {
+                        callback: (value)=>value === 0 ? '0' : (value / 1000).toFixed(1) + 'K'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    enabled: false,
+                    external: (0, _buildTooltipJs.externalTooltipHandler)
+                }
             }
         }
-    }
-});
+    });
+    (0, _disableButton.disable)();
+}
 
-},{"chart.js/auto":"a3bOj","../operation/calculateResult.js":"hWafh","./buildTooltip.js":"ejkOq","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"a3bOj":[function(require,module,exports,__globalThis) {
+},{"chart.js/auto":"a3bOj","../data/compliteDataToCanculate.js":"aNWHP","../operation/calculateResult.js":"hWafh","./buildTooltip.js":"ejkOq","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","../operation/disableButton":"dxFi8"}],"a3bOj":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _chartJs = require("../dist/chart.js");
@@ -14493,23 +14433,74 @@ function index_esm(input) {
     return new Color(input);
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"hWafh":[function(require,module,exports,__globalThis) {
-// canculator_2.js
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"jnFvT":[function(require,module,exports,__globalThis) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"aNWHP":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "data", ()=>data);
-parcelHelpers.export(exports, "calculated", ()=>calculated);
+parcelHelpers.export(exports, "compliteInputData", ()=>compliteInputData);
+parcelHelpers.export(exports, "compliteToggleData", ()=>compliteToggleData);
 const data = {
     firstContribution: 10000,
-    contribution: 100,
-    contributionFrequency: "monthly",
-    interestRate: 2,
-    Inflation: 0,
-    taxRate: 0,
-    payTaxFrequency: "end",
-    interestRateFrequency: "annual",
+    contribution: 500,
+    contributionFrequency: 'monthly',
+    interestRate: 7,
+    inflation: 3,
+    taxRate: 19.5,
+    payTaxFrequency: 'annual',
+    interestRateFrequency: 'monthly',
     years: 20
 };
+function compliteInputData(inputDataArray) {
+    data.firstContribution = inputDataArray[0];
+    data.contribution = inputDataArray[1];
+    data.interestRate = inputDataArray[2];
+    data.years = inputDataArray[3];
+    data.inflation = inputDataArray[4];
+    data.taxRate = inputDataArray[5];
+// console.log(data)
+}
+function compliteToggleData(toggleDataArray) {
+    data.contributionFrequency = toggleDataArray[0];
+    data.payTaxFrequency = toggleDataArray[2];
+    data.interestRateFrequencye = toggleDataArray[1];
+// console.log(data)
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"hWafh":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "calculated", ()=>calculated);
+var _compliteDataToCanculateJs = require("../data/compliteDataToCanculate.js");
 function calculated(object) {
     const { firstContribution, contribution, contributionFrequency, interestRate, Inflation, taxRate, payTaxFrequency, interestRateFrequency, years } = object;
     const totalMonths = years * 12;
@@ -14588,7 +14579,7 @@ function calculated(object) {
     };
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"ejkOq":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","../data/compliteDataToCanculate.js":"aNWHP"}],"ejkOq":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "externalTooltipHandler", ()=>externalTooltipHandler);
@@ -14617,7 +14608,7 @@ const externalTooltipHandler = (context)=>{
             const label = dataPoint.dataset.label;
             const value = dataPoint.raw;
             totalSum = value;
-            const formattedValue = '$' + value.toLocaleString('en-US');
+            const formattedValue = value.toLocaleString('en-US');
             innerHtml += `
         <div class="tooltip-row color-index-${i}">
           <span>${label}:</span>
@@ -14634,6 +14625,127 @@ const externalTooltipHandler = (context)=>{
     tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY - 50 + 'px';
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequireeac2", {})
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"dxFi8":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "disable", ()=>disable);
+const submitBtn = document.querySelector(".form-settings__submit-btn");
+function disable() {
+    submitBtn.disabled = true;
+    submitBtn.classList.remove("form-settings__reset-btn--active");
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"TFunB":[function(require,module,exports,__globalThis) {
+const dropDowns = document.querySelectorAll(".dropdown");
+const dropDownMenus = document.querySelectorAll(".dropdown__menu");
+dropDowns.forEach((button)=>{
+    button.addEventListener("click", toggleDropDown);
+});
+dropDownMenus.forEach((menu)=>{
+    menu.addEventListener("click", changeDropDownValue);
+});
+function toggleDropDown(event) {
+    const currentDropDown = event.target.closest(".dropdown");
+    if (!currentDropDown) return;
+    const currentDropDownList = currentDropDown.querySelector(".dropdown__menu");
+    const currentIcon = currentDropDown.querySelector(".actions__arrow");
+    dropDowns.forEach((dropDown)=>{
+        if (dropDown !== currentDropDown) {
+            const dropDownList = dropDown.querySelector(".dropdown__menu");
+            const icon = dropDown.querySelector(".actions__arrow");
+            if (dropDownList && !dropDownList.classList.contains("is-hidden")) dropDownList.classList.add("is-hidden");
+            if (icon) icon.classList.remove("round-180-deg");
+        }
+    });
+    if (currentIcon) currentIcon.classList.toggle("round-180-deg");
+    if (currentDropDownList) currentDropDownList.classList.toggle("is-hidden");
+}
+function changeDropDownValue(event) {
+    let currentDropDownItem;
+    if (event.target.classList.contains("dropdown__item")) currentDropDownItem = event.target;
+    else currentDropDownItem = event.target.closest(".dropdown__item");
+    const currentDropDownMenu = currentDropDownItem.closest(".dropdown");
+    const currentDropDownSelectedItem = currentDropDownMenu.querySelector(".dropdown__item--selected");
+    const currentDropDownValue = currentDropDownItem.querySelector(".dropdown__item-type");
+    const dropDownValue = currentDropDownMenu.querySelector(".dropdown__current-value");
+    currentDropDownSelectedItem.classList.remove("dropdown__item--selected");
+    currentDropDownItem.classList.add("dropdown__item--selected");
+    dropDownValue.textContent = currentDropDownValue.textContent;
+}
+
+},{}],"Zn6Xe":[function(require,module,exports,__globalThis) {
+var _makeDataFromInput = require("../data/makeDataFromInput");
+const form = document.querySelector(".form-settings");
+const submitBtn = document.querySelector(".form-settings__submit-btn");
+form.addEventListener("input", renevalPage);
+function renevalPage(event) {
+    const group = event.target.closest(".form-settings__group");
+    const page = group.querySelector(".form-settings__value-badge");
+    if (event.target.step === "0.1") {
+        if (Number(event.target.value) >= 100) page.textContent = "100%";
+        else page.textContent = event.target.value + "%";
+    } else if (event.target.step === "1") {
+        if (Number(event.target.value) >= 100) page.textContent = "100\u0440.";
+        else page.textContent = event.target.value + "\u0440.";
+    } else {
+        page.textContent = event.target.value;
+        if (Number(event.target.value) >= 1000000) page.textContent = "1000000";
+        else page.textContent = event.target.value;
+    }
+    submitBtn.disabled = false;
+    submitBtn.classList.add("form-settings__reset-btn--active");
+    (0, _makeDataFromInput.inputGetData)();
+}
+
+},{"../data/makeDataFromInput":"9Sc4T"}],"9Sc4T":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "inputGetData", ()=>inputGetData);
+var _compliteDataToCanculate = require("./compliteDataToCanculate");
+function inputGetData() {
+    const numbersDataBase = document.querySelectorAll(".form-settings__value-badge");
+    const realArray = Array.from(numbersDataBase);
+    let numbersArray = realArray.map((element)=>{
+        return Number(parseFloat(element.textContent));
+    });
+    (0, _compliteDataToCanculate.compliteInputData)(numbersArray);
+}
+
+},{"./compliteDataToCanculate":"aNWHP","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"ifLxv":[function(require,module,exports,__globalThis) {
+var _makeDataFromToggle = require("../data/makeDataFromToggle");
+const form = document.querySelector(".form-settings");
+const submitBtn = document.querySelector(".form-settings__submit-btn");
+form.addEventListener("click", frequencyDataFormated);
+function frequencyDataFormated(event) {
+    let toggleGroup;
+    let newSelectedElement;
+    let oldSelectedElement;
+    if (event.target.closest(".form-settings__toggle-group") !== null) {
+        toggleGroup = event.target.closest(".form-settings__toggle-group");
+        newSelectedElement = event.target;
+        oldSelectedElement = toggleGroup.querySelector(".form-settings__toggle-label--selected");
+    } else return;
+    oldSelectedElement.classList.remove("form-settings__toggle-label--selected");
+    newSelectedElement.classList.add("form-settings__toggle-label--selected");
+    submitBtn.disabled = false;
+    submitBtn.classList.add("form-settings__reset-btn--active");
+    (0, _makeDataFromToggle.toggleGetData)();
+}
+
+},{"../data/makeDataFromToggle":"75EOm"}],"75EOm":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "toggleGetData", ()=>toggleGetData);
+var _compliteDataToCanculate = require("./compliteDataToCanculate");
+function toggleGetData() {
+    const selectedToggles = document.querySelectorAll(".form-settings__toggle-label--selected");
+    const realSelectedTogglesArray = Array.from(selectedToggles);
+    let selectedFrequency = realSelectedTogglesArray.map((element)=>{
+        return element.dataset.period;
+    });
+    (0, _compliteDataToCanculate.compliteToggleData)(selectedFrequency);
+}
+
+},{"./compliteDataToCanculate":"aNWHP","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequireeac2", {})
 
 //# sourceMappingURL=test13.31b563d9.js.map

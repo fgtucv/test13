@@ -367,26 +367,6 @@ button {
   line-height: 16px;
 }
 
-.form-settings__reset-btn {
-  color: #6b7280;
-  letter-spacing: normal;
-  background-color: #0000;
-  border-radius: 8px;
-  align-items: center;
-  gap: 6px;
-  height: fit-content;
-  padding: 6px 10px;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 16px;
-  display: flex;
-}
-
-.form-settings__reset-icon {
-  width: 14px;
-  height: 14px;
-}
-
 .form-settings__label {
   color: #374151;
   font-size: 16px;
@@ -409,7 +389,7 @@ button {
   align-items: center;
   width: 88px;
   height: 32px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 20px;
   display: flex;
@@ -493,7 +473,7 @@ button {
 .form-settings__submit-btn {
   color: #9ca3af;
   letter-spacing: normal;
-  background-color: #f3f4f6;
+  background: #f3f4f6;
   border-radius: 12px;
   justify-content: center;
   gap: 8px;
@@ -502,6 +482,12 @@ button {
   font-weight: 700;
   line-height: 20px;
   display: flex;
+}
+
+.form-settings__reset-btn--active {
+  color: #fff;
+  background: linear-gradient(to right, #9333ea, #7e22ce);
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 6px -1px #a855f74d, 0 2px 4px -2px #a855f74d;
 }
 
 .form-settings__submit-icon {
@@ -670,7 +656,7 @@ button {
 }
 
 .legend__item--contribution:before {
-  background-color: #e9d5ff;
+  background-color: #6c757d;
 }
 
 .legend__item--interest:before {
