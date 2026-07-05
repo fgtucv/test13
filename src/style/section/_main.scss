@@ -1,12 +1,13 @@
+@use "../utilits/variables" as *;
+
 @mixin smooth-transition {
-   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+   transition:
+      color $transition-fast,
+      background-color $transition-fast,
+      border-color $transition-fast,
+      box-shadow $transition-fast,
+      transform $transition-fast;
 }
-
-/* ==========================================================================
-   1. ГОЛОВНІ ОБГОРТКИ, КОНТЕЙНЕРИ ТА ШАПКА СТОРІНКИ
-   ========================================================================== */
-
-.calculator {}
 
 .calculator .container {
    flex-direction: column;
@@ -20,7 +21,7 @@
 .calculator__title {
    font-size: 30px;
    line-height: 36px;
-   color: #111827;
+   color: $color-gray-900;
    font-weight: 800;
    letter-spacing: -0.75px;
 }
@@ -28,31 +29,26 @@
 .calculator__subtitle {
    font-size: 16px;
    line-height: 24px;
-   color: #6b7280;
+   color: $color-gray-500;
    margin-top: 6px;
    max-width: 672px;
 }
 
 .calculator__layout {
    display: flex;
+   align-items: flex-start;
 }
 
-
-/* ==========================================================================
-   2. ЛІВА ПАНЕЛЬ (ФОРМА ТА НАЛАШТУВАННЯ)
-   ========================================================================== */
-
 .calculator__sidebar {
-   background-color: #ffffff;
+   background-color: $color-white;
    border-radius: 16px;
-   border: 0.8px solid #e5e7eb;
-   box-sizing: border-box;
+   border: 1px solid $color-gray-200;
    display: block;
    padding: 24px;
    max-width: 380px;
    margin-right: 24px;
    @include smooth-transition;
-   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px -1px;
+   box-shadow: $shadow-card;
 }
 
 .calculator__form {
@@ -60,8 +56,6 @@
    display: flex;
    flex-direction: column;
 }
-
-.form-settings {}
 
 .form-settings__header {
    display: flex;
@@ -71,7 +65,7 @@
 .form-settings__title {
    font-size: 16px;
    line-height: 24px;
-   color: #111827;
+   color: $color-gray-900;
    font-weight: 700;
 }
 
@@ -83,14 +77,11 @@
 .form-settings__hint {
    font-size: 12px;
    line-height: 16px;
-   color: #6b7280;
+   color: $color-gray-500;
 }
 
-/* Групи полів та елементи вводу */
-.form-settings__group {}
-
 .form-settings__label {
-   color: #374151;
+   color: $color-gray-700;
    font-size: 16px;
    line-height: 24px;
    font-weight: 600;
@@ -104,7 +95,7 @@
 }
 
 .form-settings__value-badge {
-   background-color: rgb(250, 245, 255);
+   background-color: $color-purple-50;
    border-radius: 8px;
    width: 88px;
    height: 32px;
@@ -118,22 +109,19 @@
 }
 
 .form-settings__input {
-   background-color: #ffffff;
+   background-color: $color-white;
    padding: 10px 14px;
    border-radius: 12px;
-   border: 0.8px solid #e5e7eb;
+   border: 1px solid $color-gray-200;
+   color: $color-gray-900;
    font-size: 14px;
    line-height: 20px;
-   letter-spacing: normal;
    font-weight: 600;
 }
 
-.form-settings__range {}
-
-/* Таби-перемикачі (Щомісяця / Щороку) */
 .form-settings__toggle-group {
    display: flex;
-   background-color: #f3f4f6;
+   background-color: $color-gray-100;
    border-radius: 12px;
    padding: 4px;
    width: 100%;
@@ -142,7 +130,13 @@
 }
 
 .form-settings__toggle-radio {
-   display: none;
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   overflow: hidden;
+   clip: rect(0 0 0 0);
+   white-space: nowrap;
+   clip-path: inset(50%);
 }
 
 .form-settings__toggle-label {
@@ -151,27 +145,25 @@
    padding: 10px 16px;
    font-size: 14px;
    font-weight: 600;
-   color: #4b5563;
+   color: $color-gray-600;
    cursor: pointer;
    border-radius: 9px;
    user-select: none;
-   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+   @include smooth-transition;
 }
 
 .form-settings__toggle-label--selected {
-   background-color: #ffffff;
-   color: #7e22ce;
-   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+   background-color: $color-white;
+   color: $color-purple-700;
+   box-shadow: $shadow-soft;
 }
-
-/* Кастомний випадний список (Dropdown) */
 
 .form-settings__dropdown {
    padding: 10px 14px;
    display: flex;
-   background-color: #ffffff;
+   background-color: $color-white;
    border-radius: 12px;
-   border: 0.8px solid #e5e7eb;
+   border: 1px solid $color-gray-200;
    margin-top: 10px;
 }
 
@@ -183,44 +175,35 @@
 }
 
 .form-settings__dropdown .dropdown__current-value {
-   color: #111827;
+   color: $color-gray-900;
    font-size: 14px;
    font-weight: 600;
    line-height: 20px;
-   letter-spacing: normal;
 }
 
 .form-settings__dropdown .dropdown__arrow {
    height: 16px;
    width: 16px;
-   stroke: #4b5563;
+   stroke: $color-gray-600;
 }
 
-.form-settings__dropdown .dropdown__menu {}
-
-.dropdown__item {}
-
-.dropdown__item--selected {}
-
-/* Головна кнопка форми */
 .form-settings__submit-btn {
    padding: 12px;
-   background: #f3f4f6;
+   background: $color-gray-100;
    border-radius: 12px;
-   color: #9ca3af;
+   color: $color-gray-400;
    display: flex;
    gap: 8px;
    justify-content: center;
    font-weight: 700;
    font-size: 14px;
    line-height: 20px;
-   letter-spacing: normal;
 }
 
 .form-settings__reset-btn--active {
-   background: linear-gradient(to right, rgb(147, 51, 234), rgb(126, 34, 206));
-   color: #ffffff;
-   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(168, 85, 247, 0.3) 0px 4px 6px -1px, rgba(168, 85, 247, 0.3) 0px 2px 4px -2px;
+   background: linear-gradient(to right, $color-purple-600, $color-purple-700);
+   color: $color-white;
+   box-shadow: $shadow-purple;
 }
 
 .form-settings__submit-icon {
@@ -229,32 +212,21 @@
    stroke: currentColor;
 }
 
-
-/* ==========================================================================
-   3. ПРАВА ПАНЕЛЬ (РЕЗУЛЬТАТИ ТА ВІЗУАЛІЗАЦІЯ)
-   ========================================================================== */
-
-.calculator__main {}
-
-/* Блок шести карток результатів */
 .calculator__results {
    display: flex;
    flex-wrap: wrap;
    gap: 16px;
 }
 
-.dashboard-grid {}
-
 .result-card {
-   background-color: #ffffff;
+   background-color: $color-white;
    border-radius: 16px;
-   border: 0.8px solid #e5e7eb;
-   box-sizing: border-box;
+   border: 1px solid $color-gray-200;
    display: block;
    padding: 20px;
    width: 260px;
    @include smooth-transition;
-   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px -1px;
+   box-shadow: $shadow-card;
 }
 
 .result-card__header {
@@ -264,7 +236,7 @@
 }
 
 .result-card__title {
-   color: #6b7280;
+   color: $color-gray-500;
    font-size: 12px;
    line-height: 16px;
    font-weight: 600;
@@ -278,13 +250,13 @@
    align-items: center;
    justify-content: center;
    border-radius: 12px;
-   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
+   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
 .result-card__icon {
    height: 18px;
    width: 18px;
-   stroke: #ffffff;
+   stroke: $color-white;
 }
 
 .result-card__value {
@@ -294,68 +266,63 @@
    letter-spacing: -0.7px;
 }
 
-/* Модифікатори кольорів для кожної картки */
 .result-card--purple .result-card__icon-bacground {
-   background: linear-gradient(to right bottom, rgb(168, 85, 247), rgb(126, 34, 206));
+   background: linear-gradient(to right bottom, #a855f7, $color-purple-700);
 }
 
 .result-card--violet .result-card__icon-bacground {
-   background: linear-gradient(to right bottom, rgb(192, 132, 252), rgb(147, 51, 234));
+   background: linear-gradient(to right bottom, #c084fc, $color-purple-600);
 }
 
 .result-card--red .result-card__icon-bacground {
-   background: linear-gradient(to right bottom, rgb(239, 68, 68), rgb(185, 28, 28));
+   background: linear-gradient(to right bottom, #ef4444, #b91c1c);
 }
 
 .result-card--gray .result-card__icon-bacground {
-   background: linear-gradient(to right bottom, rgb(156, 163, 175), rgb(75, 85, 99));
+   background: linear-gradient(to right bottom, #9ca3af, $color-gray-600);
 }
 
 .result-card--green .result-card__icon-bacground {
-   background: linear-gradient(to right bottom, rgb(16, 185, 129), rgb(4, 120, 87));
+   background: linear-gradient(to right bottom, #10b981, $color-green-700);
 }
 
 .result-card--orange .result-card__icon-bacground {
-   background: linear-gradient(to right bottom, rgb(245, 158, 11), rgb(180, 83, 9));
+   background: linear-gradient(to right bottom, #f59e0b, $color-orange-700);
 }
 
 .result-card--purple .result-card__value {
-   color: #7e22ce;
+   color: $color-purple-700;
 }
 
 .result-card--violet .result-card__value {
-   color: #9333ea;
+   color: $color-purple-600;
 }
 
 .result-card--red .result-card__value {
-   color: #dc2626;
+   color: $color-red-600;
 }
 
 .result-card--gray .result-card__value {
-   color: #374151;
+   color: $color-gray-700;
 }
 
 .result-card--green .result-card__value {
-   color: #047857;
+   color: $color-green-700;
 }
 
 .result-card--orange .result-card__value {
-   color: #b45309;
+   color: $color-orange-700;
 }
 
-/* Блок інтерактивного графіка */
-.calculator__chart-section {}
-
 .chart-box {
-   background-color: #ffffff;
+   background-color: $color-white;
    margin-top: 24px;
    border-radius: 16px;
-   border: 0.8px solid #e5e7eb;
-   box-sizing: border-box;
+   border: 1px solid $color-gray-200;
    padding: 24px;
    @include smooth-transition;
    max-width: 824px;
-   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px -1px;
+   box-shadow: $shadow-card;
 }
 
 .chart-box__header {
@@ -365,12 +332,10 @@
    margin-bottom: 16px;
 }
 
-.chart-box__title-group {}
-
 .chart-box__title {
    font-size: 16px;
    line-height: 24px;
-   color: #111827;
+   color: $color-gray-900;
    font-weight: 700;
 }
 
@@ -378,11 +343,9 @@
    margin-top: 2px;
    font-size: 12px;
    line-height: 16px;
-   color: #6b7280;
+   color: $color-gray-500;
    font-weight: 400;
 }
-
-.chart-box__legend {}
 
 .legend {
    gap: 16px;
@@ -392,7 +355,7 @@
 .legend__item {
    font-size: 12px;
    line-height: 16px;
-   color: #4b5563;
+   color: $color-gray-600;
    font-weight: 500;
 }
 
@@ -407,15 +370,15 @@
 }
 
 .legend__item--contribution::before {
-   background-color: rgb(108, 117, 125);
+   background-color: #6c757d;
 }
 
 .legend__item--interest::before {
-   background-color: rgb(147, 51, 234);
+   background-color: $color-purple-600;
 }
 
 .legend__item--capital::before {
-   background-color: rgb(16, 185, 129);
+   background-color: #10b981;
 }
 
 .chart-box__body {
@@ -424,25 +387,18 @@
    max-width: 762px;
 }
 
-#growthChart {}
-
-/* Блок таблиці (Акордеон) */
-:root {
-   --border: #e5e7eb;
-   --line: #edf0f3;
-   --header: #f8fafc;
-   --text: #06142e;
-   --muted: #6b7280;
-   --purple: #9333ea;
-   --red: #ff1f1f;
-}
-
 .year-table {
+   --year-table-border: #e5e7eb;
+   --year-table-line: #edf0f3;
+   --year-table-header: #f8fafc;
+   --year-table-purple: #9333ea;
+   --year-table-red: #ff1f1f;
+
    margin-top: 24px;
-   border: 1px solid var(--border);
+   border: 1px solid var(--year-table-border);
    border-radius: 20px;
    overflow: hidden;
-   background: #fff;
+   background: $color-white;
    max-width: 842px;
 }
 
@@ -452,8 +408,7 @@
    justify-content: space-between;
    gap: 20px;
    padding: 16px 24px;
-   height: fit-content;
-   border-bottom: 1px solid var(--border);
+   border-bottom: 1px solid var(--year-table-border);
 }
 
 .year-table__title-wrap {
@@ -465,70 +420,67 @@
 .year-table__icon {
    width: 22px;
    height: 22px;
-   stroke: var(--purple);
+   stroke: var(--year-table-purple);
 }
 
 .year-table__title {
    font-size: 16px;
    line-height: 24px;
    font-weight: 700;
-   letter-spacing: normal;
-   color: #111827;
+   color: $color-gray-900;
 }
 
 .year-table__subtitle {
    margin-top: 2px;
-   color: var(--muted);
+   color: $color-gray-500;
    font-size: 12px;
    line-height: 16px;
-   letter-spacing: normal;
    font-weight: 400;
-   margin-top: 2px;
 }
 
 .year-table__toggle-icon {
    width: 20px;
    height: 20px;
-   stroke: #9ca3af;
+   stroke: $color-gray-400;
 }
 
 .year-table__scroll {
    overflow-x: auto;
 }
 
-table {
+.year-table table {
    width: 100%;
    min-width: 820px;
    border-collapse: collapse;
 }
 
-thead {
-   background: var(--header);
+.year-table thead {
+   background: var(--year-table-header);
 }
 
-th,
-td {
+.year-table th,
+.year-table td {
    padding: 16px 30px;
    text-align: right;
    white-space: nowrap;
 }
 
-th:first-child,
-td:first-child {
+.year-table th:first-child,
+.year-table td:first-child {
    text-align: left;
 }
 
-th {
+.year-table th {
    color: #647083;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    line-height: 16px;
+   font-size: 12px;
+   font-weight: 700;
+   letter-spacing: 0.3px;
+   line-height: 16px;
    text-transform: uppercase;
 }
 
-td {
-   border-top: 1px solid var(--line);
+.year-table td {
+   border-top: 1px solid var(--year-table-line);
    color: #0b1833;
    font-size: 14px;
    line-height: 20px;
@@ -537,53 +489,14 @@ td {
 
 .year-table__year,
 .year-table__interest {
-   color: var(--purple);
+   color: var(--year-table-purple) !important;
 }
 
 .year-table__tax {
-   color: var(--red);
+   color: var(--year-table-red) !important;
 }
 
 .year-table__final {
-   color: #111827;
+   color: $color-gray-900;
    font-weight: 700;
 }
-
-// @media (max-width: 640px) {
-//    body {
-//       padding: 16px;
-//    }
-
-//    .year-table {
-//       border-radius: 16px;
-//    }
-
-//    .year-table__top {
-//       padding: 20px 18px 18px;
-//    }
-
-//    .year-table__title {
-//       font-size: 18px;
-//    }
-
-//    .year-table__subtitle {
-//       font-size: 14px;
-//    }
-
-//    th,
-//    td {
-//       padding: 14px 18px;
-//       font-size: 16px;
-//    }
-
-//    th {
-//       font-size: 12px;
-//    }
-// }
-
-
-/* ==========================================================================
-   4. СЕЛЕКТОР СИМВОЛУ ВАЛЮТИ (ДЛЯ КЕРУВАННЯ З JS)
-   ========================================================================== */
-
-// [data-currency-sign] {}

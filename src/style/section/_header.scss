@@ -1,13 +1,22 @@
+@use "../utilits/variables" as *;
+
 @mixin smooth-transition {
-    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+        color $transition-fast,
+        background-color $transition-fast,
+        border-color $transition-fast,
+        box-shadow $transition-fast,
+        opacity $transition-fast,
+        transform $transition-fast;
 }
 
 .header {
     position: sticky;
     top: 0;
     z-index: 30;
+    background-color: rgba($color-white, 0.85);
     backdrop-filter: blur(16px);
-    border-bottom: 1px rgba(229, 231, 235, 0.7) solid;
+    border-bottom: 1px solid rgba($color-gray-200, 0.7);
 
     .container {
         display: flex;
@@ -17,7 +26,6 @@
     }
 }
 
-/* Блок логотипу */
 .logo {
     display: flex;
     align-items: center;
@@ -27,8 +35,8 @@
         width: 36px;
         height: 36px;
         border-radius: 12px;
-        background: linear-gradient(to bottom right, #a855f7, #7e22ce);
-        box-shadow: 0 4px 6px -1px rgba(168, 85, 247, 0.3), 0 2px 4px -2px rgba(168, 85, 247, 0.3);
+        background: linear-gradient(to bottom right, #a855f7, $color-purple-700);
+        box-shadow: $shadow-purple;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -37,7 +45,7 @@
     &__icon {
         width: 20px;
         height: 20px;
-        stroke: #ffffff;
+        stroke: $color-white;
     }
 
     &__text {
@@ -46,7 +54,7 @@
     }
 
     &__title {
-        color: #111827;
+        color: $color-gray-900;
         font-size: 16px;
         font-weight: 700;
         line-height: 1.5;
@@ -54,14 +62,13 @@
     }
 
     &__subtitle {
-        color: #6b7280;
+        color: $color-gray-500;
         font-size: 12px;
         font-weight: 500;
         line-height: 1.25;
     }
 }
 
-/* Загальний блок для кнопок дій */
 .actions {
     display: flex;
     gap: 8px;
@@ -73,39 +80,38 @@
         gap: 6px;
         height: 36px;
         padding: 0 10px;
-        border: 1px #e5e7eb solid;
+        border: 1px solid $color-gray-200;
         border-radius: 12px;
-        background-color: #ffffff; // Явно вказано для стабільності рендерингу
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        cursor: pointer;
+        background-color: $color-white;
+        box-shadow: $shadow-soft;
+    }
+
+    &__icon,
+    &__arrow {
+        @include smooth-transition;
+        stroke: $color-gray-600;
+        fill: none;
     }
 
     &__icon {
-        @include smooth-transition;
         width: 18px;
         height: 18px;
-        stroke: #4b5563;
-        fill: none;
     }
 
     &__text {
         @include smooth-transition;
-        color: #4b5563;
+        color: $color-gray-600;
         font-size: 14px;
         font-weight: 700;
         line-height: 20px;
     }
 
     &__arrow {
-        @include smooth-transition;
         width: 14px;
         height: 14px;
-        stroke: #4b5563;
-        fill: none;
     }
 }
 
-/* Компонент випадного списку (Dropdown) */
 .dropdown {
     position: relative;
 
@@ -123,11 +129,11 @@
         position: absolute;
         z-index: 50;
         overflow: hidden;
-        background-color: #ffffff;
-        border: 0.8px #e5e7eb solid;
+        background-color: $color-white;
+        border: 1px solid $color-gray-200;
         border-radius: 12px;
         padding: 4px 0;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        box-shadow: $shadow-menu;
         animation: fade-in-up 0.4s ease-out;
     }
 
@@ -140,19 +146,19 @@
         user-select: none;
 
         &:hover {
-            background-color: #f9fafb;
+            background-color: $color-gray-50;
         }
 
         &--selected {
-            background-color: #faf5ff;
+            background-color: $color-purple-50;
 
             .dropdown__item-type,
             .dropdown__item-label {
-                color: #7e22ce;
+                color: $color-purple-700;
             }
 
             .dropdown__item-icon {
-                stroke: #7e22ce;
+                stroke: $color-purple-700;
                 opacity: 1;
             }
         }
@@ -160,7 +166,7 @@
 
     &__item-type {
         margin-right: 10px;
-        color: #374151;
+        color: $color-gray-700;
         font-size: 16px;
         font-weight: 700;
         line-height: 24px;
@@ -168,7 +174,7 @@
     }
 
     &__item-label {
-        color: #374151;
+        color: $color-gray-700;
         font-size: 14px;
         font-weight: 500;
         line-height: 20px;
@@ -181,7 +187,7 @@
         width: 16px;
         height: 16px;
         margin-left: auto;
-        stroke: #374151;
+        stroke: $color-gray-700;
         fill: none;
         opacity: 0;
     }

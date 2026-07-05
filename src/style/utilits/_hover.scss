@@ -1,39 +1,37 @@
+@use "./variables" as *;
+
 .actions__button:hover .actions__icon,
 .actions__button:hover .actions__text,
 .actions__button:hover .actions__arrow {
-    stroke: #9333ea;
-    color: #9333ea;
+    stroke: $color-purple-600;
+    color: $color-purple-600;
 }
 
 .actions__button:hover {
-    border: 1px #9333ea solid;
+    border-color: $color-purple-600;
 }
 
 .actions__button--theme:hover .actions__icon {
     transform: rotate(-20deg);
 }
 
-.dropdown__item:hover {
-    background-color: #f9fafb;
-}
-
 .calculator__sidebar:hover {
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(124, 58, 237, 0.25) 0px 10px 30px -10px;
+    box-shadow: $shadow-elevated;
 }
 
 .form-settings__reset-btn:hover {
-    background-color: #f9fafb;
-    color: #9333ea;
+    background-color: $color-gray-50;
+    color: $color-purple-600;
 }
 
 .form-settings__reset-btn:hover .form-settings__reset-icon {
-    stroke: #9333ea;
+    stroke: $color-purple-600;
 }
 
 .result-card:hover {
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(124, 58, 237, 0.25) 0px 10px 30px -10px;
+    box-shadow: $shadow-elevated;
 }
 
 .chart-box:hover {
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(124, 58, 237, 0.25) 0px 10px 30px -10px;
+    box-shadow: $shadow-elevated;
 }
