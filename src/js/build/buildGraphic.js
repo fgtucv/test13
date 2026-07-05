@@ -4,6 +4,8 @@ import { calculated } from '../operation/calculateResult.js';
 import { externalTooltipHandler } from "./buildTooltip.js";
 import { disable } from "../operation/disableButton";
 import { changeDataInBlanc } from "../operation/changeDataInBlanc.js";
+import { buildTable } from "../build/buildTabel.js";
+
 
 const form = document.querySelector(".form-settings");
 
@@ -108,6 +110,7 @@ export function buildGraphic(event) {
     });
 
     disable();
-    console.log(result)
+    // console.log(result)
+    buildTable(result.yearlyHistory)
     changeDataInBlanc(result);
 }
