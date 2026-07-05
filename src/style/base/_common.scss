@@ -4,6 +4,10 @@ body {
     font-optical-sizing: auto;
 }
 
+* {
+   box-sizing: border-box;
+}
+
 svg {
     display: block;
     vertical-align: middle;

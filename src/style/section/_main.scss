@@ -354,7 +354,7 @@
    box-sizing: border-box;
    padding: 24px;
    @include smooth-transition;
-   max-width: 812px;
+   max-width: 824px;
    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px -1px;
 }
 
@@ -427,25 +427,163 @@
 #growthChart {}
 
 /* Блок таблиці (Акордеон) */
-.calculator__table-section {}
+:root {
+   --border: #e5e7eb;
+   --line: #edf0f3;
+   --header: #f8fafc;
+   --text: #06142e;
+   --muted: #6b7280;
+   --purple: #9333ea;
+   --red: #ff1f1f;
+}
 
-.accordion {}
+.year-table {
+   margin-top: 24px;
+   border: 1px solid var(--border);
+   border-radius: 20px;
+   overflow: hidden;
+   background: #fff;
+   max-width: 842px;
+}
 
-.accordion__item {}
+.year-table__top {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 20px;
+   padding: 16px 24px;
+   height: fit-content;
+   border-bottom: 1px solid var(--border);
+}
 
-.accordion__trigger {}
+.year-table__title-wrap {
+   display: flex;
+   gap: 12px;
+   align-items: center;
+}
 
-.accordion__title {}
+.year-table__icon {
+   width: 22px;
+   height: 22px;
+   stroke: var(--purple);
+}
 
-.accordion__icon {}
+.year-table__title {
+   font-size: 16px;
+   line-height: 24px;
+   font-weight: 700;
+   letter-spacing: normal;
+   color: #111827;
+}
 
-.accordion__subtitle {}
+.year-table__subtitle {
+   margin-top: 2px;
+   color: var(--muted);
+   font-size: 12px;
+   line-height: 16px;
+   letter-spacing: normal;
+   font-weight: 400;
+   margin-top: 2px;
+}
 
-.accordion__content {}
+.year-table__toggle-icon {
+   width: 20px;
+   height: 20px;
+   stroke: #9ca3af;
+}
+
+.year-table__scroll {
+   overflow-x: auto;
+}
+
+table {
+   width: 100%;
+   min-width: 820px;
+   border-collapse: collapse;
+}
+
+thead {
+   background: var(--header);
+}
+
+th,
+td {
+   padding: 16px 30px;
+   text-align: right;
+   white-space: nowrap;
+}
+
+th:first-child,
+td:first-child {
+   text-align: left;
+}
+
+th {
+   color: #647083;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 16px;
+   text-transform: uppercase;
+}
+
+td {
+   border-top: 1px solid var(--line);
+   color: #0b1833;
+   font-size: 14px;
+   line-height: 20px;
+   font-weight: 600;
+}
+
+.year-table__year,
+.year-table__interest {
+   color: var(--purple);
+}
+
+.year-table__tax {
+   color: var(--red);
+}
+
+.year-table__final {
+   color: #111827;
+   font-weight: 700;
+}
+
+// @media (max-width: 640px) {
+//    body {
+//       padding: 16px;
+//    }
+
+//    .year-table {
+//       border-radius: 16px;
+//    }
+
+//    .year-table__top {
+//       padding: 20px 18px 18px;
+//    }
+
+//    .year-table__title {
+//       font-size: 18px;
+//    }
+
+//    .year-table__subtitle {
+//       font-size: 14px;
+//    }
+
+//    th,
+//    td {
+//       padding: 14px 18px;
+//       font-size: 16px;
+//    }
+
+//    th {
+//       font-size: 12px;
+//    }
+// }
 
 
 /* ==========================================================================
    4. СЕЛЕКТОР СИМВОЛУ ВАЛЮТИ (ДЛЯ КЕРУВАННЯ З JS)
    ========================================================================== */
 
-[data-currency-sign] {}
+// [data-currency-sign] {}

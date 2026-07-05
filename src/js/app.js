@@ -1,3 +1,3 @@
-import { buildGraphic } from "./build/buildGraphic"
+import { buildGraphic } from "./build/buildGraphic";
 
 buildGraphic()

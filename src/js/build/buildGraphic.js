@@ -3,21 +3,19 @@ import { data } from "../data/compliteDataToCanculate.js";
 import { calculated } from '../operation/calculateResult.js';
 import { externalTooltipHandler } from "./buildTooltip.js";
 import { disable } from "../operation/disableButton";
+import { changeDataInBlanc } from "../operation/changeDataInBlanc.js";
 
 const form = document.querySelector(".form-settings");
 
 form.addEventListener("submit", buildGraphic);
 
-// 1. Створюємо змінну для збереження екземпляру графіка поза функцією
 let growthChartInstance = null;
 
 export function buildGraphic(event) {
     if (event !== undefined){
-        // console.log(event)
         event.preventDefault();
     }
 
-    // 2. Знищуємо старий графік, якщо він існує
     if (growthChartInstance !== null) {
         growthChartInstance.destroy();
     }
@@ -109,5 +107,7 @@ export function buildGraphic(event) {
         }
     });
 
-    disable()
+    disable();
+    console.log(result)
+    changeDataInBlanc(result);
 }
