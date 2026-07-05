@@ -110,7 +110,6 @@ export function buildGraphic(event) {
     });
 
     disable();
-    // console.log(result)
     buildTable(result.yearlyHistory)
     changeDataInBlanc(result);
 }

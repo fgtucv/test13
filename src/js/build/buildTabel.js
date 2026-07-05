@@ -12,6 +12,5 @@ export function buildTable(array) {
                     <td class="year-table__final">${obj.finalBalanceOfYear}</td>
                 </tr>`;
     })
-    console.log(html)
     tabelToChange.innerHTML = html.join(" ");
 }
