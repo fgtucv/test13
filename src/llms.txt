@@ -1,0 +1,7 @@
+# Compound Interest Calculator
+
+This site provides a compound interest calculator with tax, inflation, yearly breakdown, and growth chart views.
+
+## Main pages
+
+* [Home](http://localhost:1234/)

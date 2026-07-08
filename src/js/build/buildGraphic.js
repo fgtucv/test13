@@ -1,4 +1,13 @@
-import Chart from 'chart.js/auto';
+import {
+    CategoryScale,
+    Chart,
+    Filler,
+    LinearScale,
+    LineController,
+    LineElement,
+    PointElement,
+    Tooltip
+} from 'chart.js';
 import { data } from "../data/compliteDataToCanculate.js";
 import { calculated } from '../operation/calculateResult.js';
 import { externalTooltipHandler } from "./buildTooltip.js";
@@ -6,10 +15,7 @@ import { disable } from "../operation/disableButton";
 import { changeDataInBlanc } from "../operation/changeDataInBlanc.js";
 import { buildTable } from "../build/buildTabel.js";
 
-
-const form = document.querySelector(".form-settings");
-
-form.addEventListener("submit", buildGraphic);
+Chart.register(CategoryScale, LinearScale, LineController, LineElement, PointElement, Filler, Tooltip);
 
 let growthChartInstance = null;
 

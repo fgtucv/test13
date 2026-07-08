@@ -23,7 +23,7 @@ export function compliteInputData(inputDataArray) {
 export function compliteToggleData(toggleDataArray) {
     data.contributionFrequency = toggleDataArray[0];
     data.payTaxFrequency = toggleDataArray[2];
-    data.interestRateFrequencye = toggleDataArray[1];
+    data.interestRateFrequency = toggleDataArray[1];
 
     // console.log(data)
 }

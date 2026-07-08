@@ -13,6 +13,9 @@
   font-family: inherit;
   pointer-events: none;
   transition: opacity 0.1s ease, transform 0.1s ease;
+  left: 0;
+  top: 0;
+  will-change: transform, opacity;
   z-index: 100;
 }
 

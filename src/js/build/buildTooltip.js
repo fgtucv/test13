@@ -15,39 +15,44 @@ export const externalTooltipHandler = (context) => {
 
   if (tooltipModel.body) {
     const titleLines = tooltipModel.title || [];
-    const bodyLines = tooltipModel.body.map(b => b.lines);
+    const dataKey = `${titleLines.join("|")}-${tooltipModel.dataPoints.map((point) => point.raw).join("|")}`;
 
-    let innerHtml = '';
+    if (tooltipEl.dataset.key !== dataKey) {
+      let innerHtml = '';
 
-    titleLines.forEach(title => {
-      innerHtml += `<div class="tooltip-title">${title}</div>`;
-    });
+      titleLines.forEach(title => {
+        innerHtml += `<div class="tooltip-title">${title}</div>`;
+      });
 
-    innerHtml += '<div>';
-    let totalSum = 0;
+      innerHtml += '<div>';
 
-    tooltipModel.dataPoints.forEach((dataPoint, i) => {
-      const label = dataPoint.dataset.label;
-      const value = dataPoint.raw;
-      totalSum = value;
+      tooltipModel.dataPoints.forEach((dataPoint, i) => {
+        const label = dataPoint.dataset.label;
+        const value = dataPoint.raw;
+        const formattedValue = value.toLocaleString('en-US');
 
-      const formattedValue = value.toLocaleString('en-US');
+        innerHtml += `
+          <div class="tooltip-row color-index-${i}">
+            <span>${label}:</span>
+            <strong>${formattedValue}</strong>
+          </div>
+        `;
+      });
 
-      innerHtml += `
-        <div class="tooltip-row color-index-${i}">
-          <span>${label}:</span>
-          <strong>${formattedValue}</strong>
-        </div>
-      `;
-    });
-    innerHtml += '</div>';
+      innerHtml += '</div>';
 
-    tooltipEl.innerHTML = innerHtml;
+      tooltipEl.innerHTML = innerHtml;
+      tooltipEl.dataset.key = dataKey;
+    }
   }
 
   const position = context.chart.canvas.getBoundingClientRect();
+  const tooltipWidth = tooltipEl.offsetWidth || 260;
+  const maxLeft = window.innerWidth + window.pageXOffset - tooltipWidth - 16;
+  const nextLeft = position.left + window.pageXOffset + tooltipModel.caretX + 15;
+  const left = Math.max(16, Math.min(nextLeft, maxLeft));
+  const top = position.top + window.pageYOffset + tooltipModel.caretY - 50;
 
   tooltipEl.style.opacity = 1;
-  tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX + 15 + 'px';
-  tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY - 50 + 'px';
+  tooltipEl.style.transform = `translate3d(${left}px, ${top}px, 0)`;
 };
