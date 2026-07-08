@@ -9,34 +9,68 @@
       transform $transition-fast;
 }
 
+.calculator,
+.calculator * {
+   box-sizing: border-box;
+}
+
 .calculator .container {
    flex-direction: column;
-   padding: 32px;
+   padding: 24px 16px;
+   width: 100%;
+   max-width: 1280px;
+   margin: 0 auto;
+
+   @media screen and (min-width: 641px) {
+      padding: 32px;
+   }
 }
 
 .calculator__header {
-   margin-bottom: 32px;
+   margin-bottom: 24px;
+
+   @media screen and (min-width: 641px) {
+      margin-bottom: 32px;
+   }
 }
 
 .calculator__title {
-   font-size: 30px;
-   line-height: 36px;
+   font-size: 24px;
+   line-height: 32px;
    color: $color-gray-900;
    font-weight: 800;
-   letter-spacing: -0.75px;
+   letter-spacing: -0.6px;
+
+   @media screen and (min-width: 641px) {
+      font-size: 30px;
+      line-height: 36px;
+      letter-spacing: -0.75px;
+   }
 }
 
 .calculator__subtitle {
-   font-size: 16px;
-   line-height: 24px;
+   font-size: 14px;
+   line-height: 20px;
    color: $color-gray-500;
    margin-top: 6px;
    max-width: 672px;
+
+   @media screen and (min-width: 641px) {
+      font-size: 16px;
+      line-height: 24px;
+   }
 }
 
 .calculator__layout {
    display: flex;
    align-items: flex-start;
+   flex-direction: column;
+   gap: 24px;
+   width: 100%;
+
+   @media screen and (min-width: 1024px) {
+      flex-direction: row;
+   }
 }
 
 .calculator__sidebar {
@@ -44,17 +78,29 @@
    border-radius: 16px;
    border: 1px solid $color-gray-200;
    display: block;
-   padding: 24px;
-   max-width: 380px;
-   margin-right: 24px;
+   padding: 20px;
+   width: 100%;
    @include smooth-transition;
    box-shadow: $shadow-card;
+
+   @media screen and (min-width: 641px) {
+      padding: 24px;
+   }
+
+   @media screen and (min-width: 1024px) {
+      flex: 0 0 380px;
+      max-width: 380px;
+   }
 }
 
 .calculator__form {
-   gap: 24px;
+   gap: 20px;
    display: flex;
    flex-direction: column;
+
+   @media screen and (min-width: 641px) {
+      gap: 24px;
+   }
 }
 
 .form-settings__header {
@@ -82,9 +128,14 @@
 
 .form-settings__label {
    color: $color-gray-700;
-   font-size: 16px;
-   line-height: 24px;
+   font-size: 14px;
+   line-height: 20px;
    font-weight: 600;
+
+   @media screen and (min-width: 641px) {
+      font-size: 16px;
+      line-height: 24px;
+   }
 }
 
 .form-settings__data-row {
@@ -92,6 +143,7 @@
    display: flex;
    align-items: center;
    margin-top: 10px;
+   width: 100%;
 }
 
 .form-settings__value-badge {
@@ -100,7 +152,7 @@
    width: 88px;
    height: 32px;
    color: #7c3aed;
-   font-size: 13px;
+   font-size: 14px;
    line-height: 20px;
    font-weight: 700;
    align-items: center;
@@ -117,6 +169,8 @@
    font-size: 14px;
    line-height: 20px;
    font-weight: 600;
+   min-width: 0;
+   width: 100%;
 }
 
 .form-settings__toggle-group {
@@ -212,10 +266,20 @@
    stroke: currentColor;
 }
 
+.calculator__main {
+   width: 100%;
+   min-width: 0;
+
+   @media screen and (min-width: 1024px) {
+      flex: 1 1 auto;
+   }
+}
+
 .calculator__results {
    display: flex;
    flex-wrap: wrap;
    gap: 16px;
+   width: 100%;
 }
 
 .result-card {
@@ -224,9 +288,17 @@
    border: 1px solid $color-gray-200;
    display: block;
    padding: 20px;
-   width: 260px;
+   width: 100%;
    @include smooth-transition;
    box-shadow: $shadow-card;
+
+   @media screen and (min-width: 641px) {
+      flex: 1 1 calc(50% - 8px);
+   }
+
+   @media screen and (min-width: 1024px) {
+      flex: 1 1 calc(33.333% - 11px);
+   }
 }
 
 .result-card__header {
@@ -320,16 +392,23 @@
    border-radius: 16px;
    border: 1px solid $color-gray-200;
    padding: 24px;
+   width: 100%;
    @include smooth-transition;
-   max-width: 824px;
    box-shadow: $shadow-card;
 }
 
 .chart-box__header {
    display: flex;
+   flex-direction: column;
    justify-content: space-between;
-   align-items: center;
+   align-items: flex-start;
+   gap: 16px;
    margin-bottom: 16px;
+
+   @media screen and (min-width: 641px) {
+      flex-direction: row;
+      align-items: center;
+   }
 }
 
 .chart-box__title {
@@ -350,6 +429,7 @@
 .legend {
    gap: 16px;
    display: flex;
+   flex-wrap: wrap;
 }
 
 .legend__item {
@@ -384,6 +464,7 @@
 .chart-box__body {
    position: relative;
    margin: auto;
+   width: 100%;
    max-width: 762px;
 }
 
@@ -399,6 +480,7 @@
    border-radius: 20px;
    overflow: hidden;
    background: $color-white;
+   width: 100%;
    max-width: 842px;
 }
 
