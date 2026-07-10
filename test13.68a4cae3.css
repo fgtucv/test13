@@ -241,13 +241,8 @@ button {
   position: relative;
 }
 
-.dropdown__currency .dropdown__menu {
-  bottom: -220px;
-  right: 0;
-}
-
 .dropdown__language .dropdown__menu {
-  bottom: -180px;
+  bottom: -100px;
   right: 0;
 }
 

@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang=uk><script type=importmap>{"imports":{"bkygR":"/test13/buildGraphic.f4097a78.js"}}</script><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=description content="Розрахуйте свій пасивний дохід за допомогою зручного калькулятора складних відсотків. Дізнайтеся, скільки принесуть ваші інвестиції через 10, 20 чи 40 років!"><title>Калькулятор складних відсотків — Розрахунок пасивного доходу</title><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..800;1,14..32,400..800&amp;display=swap" as=style onload="this.onload=null;this.rel='stylesheet'"><noscript>
+<!DOCTYPE html><html lang=uk><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=description content="Розрахуйте свій пасивний дохід за допомогою зручного калькулятора складних відсотків. Дізнайтеся, скільки принесуть ваші інвестиції через 10, 20 чи 40 років!"><title>Interestify</title><link rel=icon type=image/svg+xml href=/test13/favicon.ba6e5a43.svg><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..800;1,14..32,400..800&amp;display=swap" as=style onload="this.onload=null;this.rel='stylesheet'"><noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..800;1,14..32,400..800&display=swap">
-    </noscript><link rel=stylesheet href=/test13/test13.3281c887.css><body>
+    </noscript><link rel=stylesheet href=/test13/test13.261cee35.css><body>
     <header class=header>
     <div class=container>
         <div class="header__logo logo">
@@ -9,7 +9,7 @@
             </span>
             <div class=logo__text>
                 <span class=logo__title>Interestify</span>
-                <span class=logo__subtitle>Калькулятор складних відсотків</span>
+                <span class=logo__subtitle data-i18n=header.logo_subtitle>Калькулятор складних відсотків</span>
             </div>
         </div>
 
@@ -25,28 +25,19 @@
                 <ul class="dropdown__menu is-hidden">
                     <li class="dropdown__item dropdown__item--selected">
                         <span class=dropdown__item-type>UA</span>
-                        <span class=dropdown__item-label>Українська</span>
+                        <span class=dropdown__item-label data-i18n=languages.ua>Українська</span>
                         <svg class=dropdown__item-icon viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round><path d="M20 6 9 17l-5-5"/></svg>
                     </li>
                     <li class=dropdown__item>
                         <span class=dropdown__item-type>EN</span>
-                        <span class=dropdown__item-label>English</span>
-                        <svg class=dropdown__item-icon viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round><path d="M20 6 9 17l-5-5"/></svg>
-                    </li>
-                    <li class=dropdown__item>
-                        <span class=dropdown__item-type>ES</span>
-                        <span class=dropdown__item-label>Español</span>
-                        <svg class=dropdown__item-icon viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round><path d="M20 6 9 17l-5-5"/></svg>
-                    </li>
-                    <li class=dropdown__item>
-                        <span class=dropdown__item-type>FR</span>
-                        <span class=dropdown__item-label>Français</span>
+                        <span class=dropdown__item-label data-i18n=languages.en>English</span>
                         <svg class=dropdown__item-icon viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round><path d="M20 6 9 17l-5-5"/></svg>
                     </li>
                 </ul>
             </div>
 
-            <button class="actions__button actions__button--theme" type=button aria-label="Змінити тему">
+            
+            <button class="actions__button actions__button--theme" type=button aria-label="Змінити тему" data-i18n=[aria-label]header.change_theme>
                 <svg class=actions__icon fill=none viewBox="0 0 24 24" stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
             </button>
 
@@ -57,9 +48,8 @@
     <div class=container>
 
         <header class=calculator__header>
-            <h1 class=calculator__title>Побачте, як ростуть ваші гроші</h1>
-            <p class=calculator__subtitle>Точний калькулятор складних відсотків. Змініть будь-який параметр —
-                результати, графік і таблицю оновлюються миттєво.</p>
+            <h1 class=calculator__title data-i18n=main.title>Побачте, як ростуть ваші гроші</h1>
+            <p class=calculator__subtitle data-i18n=main.subtitle>Точний калькулятор складних відсотків. Змініть будь-який параметр — результати, графік і таблицю оновлюються миттєво.</p>
         </header>
 
         <div class=calculator__layout>
@@ -68,14 +58,13 @@
 
                     <div class=form-settings__header>
                         <div class=form-settings__header-text>
-                            <h2 class=form-settings__title>Параметри інвестицій</h2>
-                            <span class=form-settings__hint>Натисніть «Розрахувати», щоб оновити <br>
-                                результати</span>
+                            <h2 class=form-settings__title data-i18n=form.title>Параметри інвестицій</h2>
+                            <span class=form-settings__hint data-i18n=form.hint>Натисніть «Розрахувати», щоб оновити <br> результати</span>
                         </div>
                     </div>
 
                     <div class=form-settings__group>
-                        <label for=initialInvestment class=form-settings__label>Початкові інвестиції</label>
+                        <label for=initialInvestment class=form-settings__label data-i18n=form.initial_investment>Початкові інвестиції</label>
                         <div class=form-settings__data-row>
                             <input type=number step=100 id=initialInvestment class=form-settings__input value=10000>
                             <span class=form-settings__value-badge>
@@ -85,7 +74,7 @@
                     </div>
 
                     <div class=form-settings__group>
-                        <label for=monthlyContribution class=form-settings__label>Внесок</label>
+                        <label for=monthlyContribution class=form-settings__label data-i18n=form.contribution>Внесок</label>
                         <div class=form-settings__data-row>
                             <input type=number step=100 id=monthlyContribution class=form-settings__input value=500>
                             <span class=form-settings__value-badge>
@@ -95,16 +84,15 @@
                     </div>
 
                     <div class=form-settings__group>
-                        <span class=form-settings__label>Періодичність внесків</span>
+                        <span class=form-settings__label data-i18n=form.contribution_period>Періодичність внесків</span>
                         <div class=form-settings__toggle-group>
-                            <label class="form-settings__toggle-label form-settings__toggle-label--selected" data-period=monthly>Щомісяця</label>
-
-                            <label class=form-settings__toggle-label data-period=annual>Щороку</label>
+                            <label class="form-settings__toggle-label form-settings__toggle-label--selected" data-period=monthly data-i18n=periods.monthly>Щомісяця</label>
+                            <label class=form-settings__toggle-label data-period=annual data-i18n=periods.annual>Щороку</label>
                         </div>
                     </div>
 
                     <div class=form-settings__group>
-                        <label for=interestRate class=form-settings__label>Очікувана відсоткова ставка</label>
+                        <label for=interestRate class=form-settings__label data-i18n=form.interest_rate>Очікувана відсоткова ставка</label>
                         <div class=form-settings__data-row>
                             <input type=number id=interestRate class=form-settings__input value=7 step=0.1>
                             <span class=form-settings__value-badge>7%</span>
@@ -112,54 +100,49 @@
                     </div>
 
                     <div class=form-settings__group>
-                        <span class=form-settings__label>Частота нарахування відсотку</span>
+                        <span class=form-settings__label data-i18n=form.compounding_frequency>Частота нарахування відсотку</span>
                         <div class=form-settings__toggle-group>
-                            <label class="form-settings__toggle-label form-settings__toggle-label--selected" data-period=monthly>Щомісяця</label>
-                            <label class=form-settings__toggle-label data-period=annual>Щороку</label>
+                            <label class="form-settings__toggle-label form-settings__toggle-label--selected" data-period=monthly data-i18n=periods.monthly>Щомісяця</label>
+                            <label class=form-settings__toggle-label data-period=annual data-i18n=periods.annual>Щороку</label>
                         </div>
                     </div>
 
                     <div class=form-settings__group>
-                        <label for=yearsTerm class=form-settings__label>Термін</label>
+                        <label for=yearsTerm class=form-settings__label data-i18n=form.term>Термін</label>
                         <div class=form-settings__data-row>
                             <input step=1 type=number id=yearsTerm class=form-settings__input value=20>
+                            
                             <span class=form-settings__value-badge>20р.</span>
                         </div>
                     </div>
 
                     <div class=form-settings__group>
-                        <label for=inflationRate class=form-settings__label>Очікувана інфляція</label>
+                        <label for=inflationRate class=form-settings__label data-i18n=form.inflation_rate>Очікувана інфляція</label>
                         <div class=form-settings__data-row>
                             <input type=number id=inflationRate class=form-settings__input value=3 step=0.1>
                             <span class=form-settings__value-badge>3%</span>
                         </div>
                     </div>
 
-
                     <div class=form-settings__group>
-                        <label class=form-settings__label for=tax-rate>Ставка податку</label>
-
+                        <label class=form-settings__label for=tax-rate data-i18n=form.tax_rate>Ставка податку</label>
                         <div class=form-settings__row>
                             <div class=form-settings__data-row>
                                 <input class="form-settings__input form-settings__input--number" type=number id=tax-rate value=19.5 step=0.1>
                                 <div class=form-settings__value-badge>19.5%</div>
                             </div>
                         </div>
-
                     </div>
 
                     <div class=form-settings__group>
-                        <span class=form-settings__label>Коли сплачувати податок</span>
-
+                        <span class=form-settings__label data-i18n=form.tax_timing>Коли сплачувати податок</span>
                         <div class=form-settings__toggle-group>
-                            <label class="form-settings__toggle-label form-settings__toggle-label--selected" data-period=annual>Щороку</label>
-
-                            <label class=form-settings__toggle-label data-period=end>Наприкінці
-                            </label>
+                            <label class="form-settings__toggle-label form-settings__toggle-label--selected" data-period=annual data-i18n=periods.annual>Щороку</label>
+                            <label class=form-settings__toggle-label data-period=end data-i18n=periods.at_the_end>Наприкінці</label>
                         </div>
                     </div>
 
-                    <button class=form-settings__submit-btn disabled=true>
+                    <button class=form-settings__submit-btn disabled=true data-i18n=form.calculate_btn>
                         <svg class=form-settings__submit-icon viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round><rect width=16 height=20 x=4 y=2 rx=2 /><line x1=8 x2=16 y1=6 y2=6 /><line x1=16 x2=16 y1=14 y2=18 /><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
                         Розрахувати
                     </button>
@@ -170,7 +153,7 @@
                 <ul class="calculator__results dashboard-grid">
                     <li class="result-card result-card--purple">
                         <div class=result-card__header>
-                            <span class=result-card__title>Загальний баланс до податку</span>
+                            <span class=result-card__title data-i18n=results.total_before_tax>Загальний баланс до податку</span>
                             <span class=result-card__icon-bacground>
                                 <svg class=result-card__icon viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2.5 stroke-linecap=round stroke-linejoin=round><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
                             </span>
@@ -181,7 +164,7 @@
                     </li>
                     <li class="result-card result-card--violet">
                         <div class=result-card__header>
-                            <span class=result-card__title>Баланс після кінцевого податку</span>
+                            <span class=result-card__title data-i18n=results.total_after_tax>Баланс після кінцевого податку</span>
                             <span class=result-card__icon-bacground>
                                 <svg class=result-card__icon viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2.5 stroke-linecap=round stroke-linejoin=round><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
                             </span>
@@ -192,7 +175,7 @@
                     </li>
                     <li class="result-card result-card--red">
                         <div class=result-card__header>
-                            <span class=result-card__title>Сплачено податків</span>
+                            <span class=result-card__title data-i18n=results.taxes_paid>Сплачено податків</span>
                             <span class=result-card__icon-bacground>
                                 <svg class=result-card__icon viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2.5 stroke-linecap=round stroke-linejoin=round><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>
                             </span>
@@ -203,7 +186,7 @@
                     </li>
                     <li class="result-card result-card--gray">
                         <div class=result-card__header>
-                            <span class=result-card__title>Загальний внесок</span>
+                            <span class=result-card__title data-i18n=results.total_contributions>Загальний внесок</span>
                             <span class=result-card__icon-bacground>
                                 <svg class=result-card__icon viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2.5 stroke-linecap=round stroke-linejoin=round><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
                             </span>
@@ -214,7 +197,7 @@
                     </li>
                     <li class="result-card result-card--green">
                         <div class=result-card__header>
-                            <span class=result-card__title>Зароблені відсотки</span>
+                            <span class=result-card__title data-i18n=results.interest_earned>Зароблені відсотки</span>
                             <span class=result-card__icon-bacground>
                                 <svg class=result-card__icon viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2.5 stroke-linecap=round stroke-linejoin=round><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2h0V5z"/><path d="M2 9v1c0 1.1.9 2 2 2h1"/><path d="M16 11h0"/></svg>
                             </span>
@@ -225,7 +208,7 @@
                     </li>
                     <li class="result-card result-card--orange">
                         <div class=result-card__header>
-                            <span class=result-card__title>Після урахування інфляції</span>
+                            <span class=result-card__title data-i18n=results.adjusted_inflation>Після урахування інфляції</span>
                             <span class=result-card__icon-bacground>
                                 <svg class=result-card__icon viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2.5 stroke-linecap=round stroke-linejoin=round><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2h0V5z"/><path d="M2 9v1c0 1.1.9 2 2 2h1"/><path d="M16 11h0"/></svg>
                             </span>
@@ -239,13 +222,13 @@
                 <article class="calculator__chart-section chart-box">
                     <header class=chart-box__header>
                         <div class=chart-box__title-group>
-                            <h3 class=chart-box__title>Зростання в часі</h3>
-                            <p class=chart-box__subtitle>Внесок проти зароблених відсотків, рік за роком.</p>
+                            <h3 class=chart-box__title data-i18n=chart.title>Зростання в часі</h3>
+                            <p class=chart-box__subtitle data-i18n=chart.subtitle>Внесок проти зароблених відсотків, рік за роком.</p>
                         </div>
                         <div class="chart-box__legend legend">
-                            <span class="legend__item legend__item--contribution">Внесок</span>
-                            <span class="legend__item legend__item--interest">Відсотки</span>
-                            <span class="legend__item legend__item--capital">Чистий капітал</span>
+                            <span class="legend__item legend__item--contribution" data-i18n=chart.legend_contribution>Внесок</span>
+                            <span class="legend__item legend__item--interest" data-i18n=chart.legend_interest>Відсотки</span>
+                            <span class="legend__item legend__item--capital" data-i18n=chart.legend_net_worth>Чистий капітал</span>
                         </div>
                     </header>
                     <div class=chart-box__body>
@@ -253,15 +236,14 @@
                     </div>
                 </article>
 
-
                 <div class=year-table aria-labelledby=year-table-title>
                     <header class=year-table__top>
                         <div class=year-table__title-wrap>
                             <svg class=year-table__icon viewBox="0 0 24 24" fill=none stroke-width=2 stroke-linecap=round stroke-linejoin=round aria-hidden=true><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
 
                             <div>
-                                <h2 class=year-table__title id=year-table-title>Розбивка по роках</h2>
-                                <p class=year-table__subtitle>20 років детального зростання.</p>
+                                <h2 class=year-table__title id=year-table-title data-i18n=table.title>Розбивка по роках</h2>
+                                <p class=year-table__subtitle data-i18n=table.subtitle>20 років детального зростання.</p>
                             </div>
                         </div>
 
@@ -271,17 +253,18 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Рік</th>
-                                    <th>Початковий<br>баланс</th>
-                                    <th>Внески</th>
-                                    <th>Зароблені<br>відсотки</th>
-                                    <th>Податок</th>
-                                    <th>Кінцевий<br>баланс</th>
+                                    <th data-i18n=table.th_year>Рік</th>
+                                    <th data-i18n=table.th_initial_balance>Початковий<br>баланс</th>
+                                    <th data-i18n=table.th_contributions>Внески</th>
+                                    <th data-i18n=table.th_interest_earned>Зароблені<br>відсотки</th>
+                                    <th data-i18n=table.th_tax>Податок</th>
+                                    <th data-i18n=table.th_final_balance>Кінцевий<br>баланс</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                
                                 <tr>
-                                    <td class=year-table__year>Рік 1</td>
+                                    <td class=year-table__year data-i18n=table.year_count data-i18n-options="{&quot;count&quot;: 1}">Рік 1</td>
                                     <td>$10,000</td>
                                     <td>$6,000</td>
                                     <td class=year-table__interest>$769</td>
@@ -289,7 +272,7 @@
                                     <td class=year-table__final>$16,769</td>
                                 </tr>
                                 <tr>
-                                    <td class=year-table__year>Рік 2</td>
+                                    <td class=year-table__year data-i18n=table.year_count data-i18n-options="{&quot;count&quot;: 2}">Рік 2</td>
                                     <td>$16,769</td>
                                     <td>$6,000</td>
                                     <td class=year-table__interest>$1,174</td>
@@ -297,7 +280,7 @@
                                     <td class=year-table__final>$23,943</td>
                                 </tr>
                                 <tr>
-                                    <td class=year-table__year>Рік 3</td>
+                                    <td class=year-table__year data-i18n=table.year_count data-i18n-options="{&quot;count&quot;: 3}">Рік 3</td>
                                     <td>$23,943</td>
                                     <td>$6,000</td>
                                     <td class=year-table__interest>$1,608</td>
@@ -305,7 +288,7 @@
                                     <td class=year-table__final>$31,551</td>
                                 </tr>
                                 <tr>
-                                    <td class=year-table__year>Рік 4</td>
+                                    <td class=year-table__year data-i18n=table.year_count data-i18n-options="{&quot;count&quot;: 4}">Рік 4</td>
                                     <td>$31,551</td>
                                     <td>$6,000</td>
                                     <td class=year-table__interest>$2,073</td>
@@ -313,7 +296,7 @@
                                     <td class=year-table__final>$39,624</td>
                                 </tr>
                                 <tr>
-                                    <td class=year-table__year>Рік 5</td>
+                                    <td class=year-table__year data-i18n=table.year_count data-i18n-options="{&quot;count&quot;: 5}">Рік 5</td>
                                     <td>$39,624</td>
                                     <td>$6,000</td>
                                     <td class=year-table__interest>$2,572</td>
@@ -323,12 +306,13 @@
                             </tbody>
                         </table>
                     </div>
-            </div></section>
+                </div>
+            </section>
         </div>
     </div>
 </main>
 
-    <script type=module src=/test13/test13.68ef7a9d.js defer></script>
+    <script type=module src=/test13/test13.ba2717af.js defer></script>
 
 
 
