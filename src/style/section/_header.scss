@@ -125,13 +125,8 @@
 .dropdown {
     position: relative;
 
-    &__currency .dropdown__menu {
-        bottom: -220px;
-        right: 0;
-    }
-
     &__language .dropdown__menu {
-        bottom: -180px;
+        bottom: -100px;
         right: 0;
     }
 

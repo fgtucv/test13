@@ -1,0 +1,62 @@
+{
+  "header": {
+    "logo_subtitle": "Калькулятор складних відсотків",
+    "change_theme": "Змінити тему"
+  },
+  "languages": {
+    "ua": "Українська",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français"
+  },
+  "main": {
+    "title": "Побачте, як ростуть ваші гроші",
+    "subtitle": "Точний калькулятор складних відсотків. Змініть будь-який параметр — результати, графік і таблицю оновлюються миттєво."
+  },
+  "form": {
+    "title": "Параметри інвестицій",
+    "hint": "Натисніть «Розрахувати», щоб оновити результати",
+    "initial_investment": "Початкові інвестиції",
+    "contribution": "Внесок",
+    "contribution_period": "Періодичність внесків",
+    "interest_rate": "Очікувана відсоткова ставка",
+    "compounding_frequency": "Частота нарахування відсотку",
+    "term": "Термін",
+    "inflation_rate": "Очікувана інфляція",
+    "tax_rate": "Ставка податку",
+    "tax_timing": "Коли сплачувати податок",
+    "calculate_btn": "Розрахувати"
+  },
+  "periods": {
+    "monthly": "Щомісяця",
+    "annual": "Щороку",
+    "at_the_end": "Наприкінці"
+  },
+  "results": {
+    "total_before_tax": "Загальний баланс до податку",
+    "total_after_tax": "Баланс після кінцевого податку",
+    "taxes_paid": "Сплачено податків",
+    "total_contributions": "Загальний внесок",
+    "interest_earned": "Зароблені відсотки",
+    "adjusted_inflation": "Після урахування інфляції"
+  },
+  "chart": {
+    "title": "Зростання в часі",
+    "subtitle": "Внесок проти зароблених відсотків, рік за роком.",
+    "legend_contribution": "Внесок",
+    "legend_interest": "Відсотки",
+    "legend_net_worth": "Чистий капітал"
+  },
+  "table": {
+    "title": "Розбивка по роках",
+    "subtitle": "Детальний звіт про зростання капіталу.",
+    "th_year": "Рік",
+    "th_initial_balance": "Початковий баланс",
+    "th_contributions": "Внески",
+    "th_interest_earned": "Зароблені відсотки",
+    "th_tax": "Податок",
+    "th_final_balance": "Кінцевий баланс",
+    "year_count": "Рік {{count}}"
+  },
+  "years_suffix": "р."
+}

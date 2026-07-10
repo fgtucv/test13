@@ -1,3 +1,5 @@
+import i18next from '../operation/i18n.js';
+
 export const externalTooltipHandler = (context) => {
   let tooltipEl = document.getElementById('chartjs-tooltip');
 
@@ -29,7 +31,13 @@ export const externalTooltipHandler = (context) => {
       tooltipModel.dataPoints.forEach((dataPoint, i) => {
         const label = dataPoint.dataset.label;
         const value = dataPoint.raw;
-        const formattedValue = value.toLocaleString('en-US');
+        
+        const currentLang = i18next.language || 'uk';
+        const locale = currentLang.substring(0, 2) === 'uk' ? 'uk-UA' : 'en-US';
+        const formattedValue = value.toLocaleString(locale, {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 2
+        });
 
         innerHtml += `
           <div class="tooltip-row color-index-${i}">

@@ -1,0 +1,62 @@
+{
+  "header": {
+    "logo_subtitle": "Compound Interest Calculator",
+    "change_theme": "Change theme"
+  },
+  "languages": {
+    "ua": "Українська",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français"
+  },
+  "main": {
+    "title": "Watch your money grow",
+    "subtitle": "Accurate compound interest calculator. Change any parameter — results, chart and table update instantly."
+  },
+  "form": {
+    "title": "Investment Parameters",
+    "hint": "Click \"Calculate\" to update the results",
+    "initial_investment": "Initial Investment",
+    "contribution": "Contribution",
+    "contribution_period": "Contribution Frequency",
+    "interest_rate": "Expected Interest Rate",
+    "compounding_frequency": "Compounding Frequency",
+    "term": "Term",
+    "inflation_rate": "Expected Inflation",
+    "tax_rate": "Tax Rate",
+    "tax_timing": "When to Pay Tax",
+    "calculate_btn": "Calculate"
+  },
+  "periods": {
+    "monthly": "Monthly",
+    "annual": "Annually",
+    "at_the_end": "At the end"
+  },
+  "results": {
+    "total_before_tax": "Total Balance Before Tax",
+    "total_after_tax": "Balance After Final Tax",
+    "taxes_paid": "Taxes Paid",
+    "total_contributions": "Total Contributions",
+    "interest_earned": "Interest Earned",
+    "adjusted_inflation": "Adjusted for Inflation"
+  },
+  "chart": {
+    "title": "Growth Over Time",
+    "subtitle": "Contributions vs. interest earned, year by year.",
+    "legend_contribution": "Contribution",
+    "legend_interest": "Interest",
+    "legend_net_worth": "Net Worth"
+  },
+  "table": {
+    "title": "Annual Breakdown",
+    "subtitle": "Detailed capital growth report.",
+    "th_year": "Year",
+    "th_initial_balance": "Initial Balance",
+    "th_contributions": "Contributions",
+    "th_interest_earned": "Interest Earned",
+    "th_tax": "Tax",
+    "th_final_balance": "Final Balance",
+    "year_count": "Year {{count}}"
+  },
+  "years_suffix": "y."
+}

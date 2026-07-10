@@ -14,10 +14,12 @@ import { externalTooltipHandler } from "./buildTooltip.js";
 import { disable } from "../operation/disableButton";
 import { changeDataInBlanc } from "../operation/changeDataInBlanc.js";
 import { buildTable } from "../build/buildTabel.js";
+import i18next from '../operation/i18n.js';
 
 Chart.register(CategoryScale, LinearScale, LineController, LineElement, PointElement, Filler, Tooltip);
 
 let growthChartInstance = null;
+export let currentArray;
 
 export function buildGraphic(event) {
     if (event !== undefined){
@@ -28,17 +30,19 @@ export function buildGraphic(event) {
         growthChartInstance.destroy();
     }
 
-    const ctx = document.getElementById('growthChart').getContext('2d');
+    const growthChartEl = document.getElementById('growthChart');
+    if (!growthChartEl) return;
+    const ctx = growthChartEl.getContext('2d');
 
     const result = calculated(data);
 
-    const labelsX = ["Рік 0"];
+    const labelsX = [i18next.t('table.year_count', { count: 0 })];
     const vneskyArray = [data.firstContribution];
     const vidsotkyArray = [0];
     const totalArray = [data.firstContribution];
 
     result.yearlyHistory.forEach(item => {
-        labelsX.push(`Рік ${item.year}`);
+        labelsX.push(i18next.t('table.year_count', { count: item.year }));
         vneskyArray.push(item.cumulativeContributions);
         vidsotkyArray.push(item.cumulativeInterest);
         totalArray.push(item.finalBalanceOfYear);
@@ -59,7 +63,7 @@ export function buildGraphic(event) {
             labels: labelsX,
             datasets: [
                 {
-                    label: 'Чистий капітал',
+                    label: i18next.t('chart.legend_net_worth', { defaultValue: 'Чистий капітал' }),
                     data: totalArray,
                     borderColor: '#10b981',
                     borderWidth: 2,
@@ -69,7 +73,7 @@ export function buildGraphic(event) {
                     order: 1
                 },
                 {
-                    label: 'Відсотки',
+                    label: i18next.t('chart.legend_interest', { defaultValue: 'Відсотки' }),
                     data: vidsotkyArray,
                     borderColor: '#9333EA',
                     backgroundColor: gradientVidsotky,
@@ -78,7 +82,7 @@ export function buildGraphic(event) {
                     order: 2
                 },
                 {
-                    label: 'Внесок',
+                    label: i18next.t('chart.legend_contribution', { defaultValue: 'Внесок' }),
                     data: vneskyArray,
                     borderColor: '#6c757d',
                     borderWidth: 1.5,
@@ -116,6 +120,14 @@ export function buildGraphic(event) {
     });
 
     disable();
-    buildTable(result.yearlyHistory)
+    currentArray = result.yearlyHistory;
+    buildTable(currentArray);
     changeDataInBlanc(result);
 }
+
+// Перемальовуємо графік при зміні мови сайту
+document.addEventListener('i18n:languageChanged', () => {
+    if (currentArray) {
+        buildGraphic();
+    }
+});
